@@ -1,0 +1,48 @@
+[data-loader='ball-scale'],
+.select2-container .select2-results__option[aria-selected='true'],
+.select2-container .select2-results__option--highlighted[aria-selected],
+.item-menu-mobile,
+.arrow-slick1:hover,
+.swal-button,
+.swal-button:active,
+.block2-img span.onsale,
+.woocommerce span.onsale,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+[data-loader='ball-scale'],
+.select2-container .select2-results__option[aria-selected='true'],
+.select2-container .select2-results__option--highlighted[aria-selected],
+.item-menu-mobile,
+.arrow-slick1:hover,
+.swal-button,
+.swal-button:active,
+.block2-img span.onsale,
+.woocommerce span.onsale,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover{
+    background-color: #e65540;
+}
+.side-menu .sub-menu a:hover,
+.block2-btn-towishlist .icon_heart,
+.side-menu .sub-menu a:hover,
+li.sale-noti > a,
+.sub_menu > li:hover > a,
+.inner-child-fof a:hover,
+a:hover{
+    color: #e65540;
+}
+.tag-item:hover{
+    border-color: #e65540;
+}
+.topbar {
+    background-color: #d21212;
+}
+.topbar-social-item,
+.topbar-email,
+.topbar-child1{
+	color: #888888;
+}

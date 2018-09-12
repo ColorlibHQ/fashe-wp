@@ -1,0 +1,18 @@
+1. Theme options
+Go to -> customize -> Theme options
+
+2. How to show footer widget
+Go to -> customize -> Theme options -> Footer -> Footer Widget On/Off
+
+3. How to set footer payment method image
+
+Go to -> customize -> Theme options -> Footer ->  Footer Payment Method
+
+4. How to set social media 
+Go to -> Appearance -> Menus -> custom links -> set menu label and social media link .
+
+Set Menu settings 
+Menu Settings -> Social Menu
+
+Follow this screenshot
+http://prntscr.com/k3kzbk
