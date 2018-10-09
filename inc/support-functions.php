@@ -165,7 +165,7 @@ if ( ! function_exists( 'fashe_social' ) ) {
 }
 // header cart count
 function fashe_cart_count( $class= '' ){
-	
+	if( fashe_is_wc_activated() ):
 	?>
 	<div class="header-wrapicon2 <?php echo esc_attr( $class ); ?>">
 		<img src="<?php echo esc_url( FASHE_DIR_ASSETS_URI ); ?>img/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="<?php esc_html_e( 'ICON', 'fashe' ); ?>">
@@ -175,6 +175,7 @@ function fashe_cart_count( $class= '' ){
 		</div>
 	</div>
 	<?php
+    endif;
 }
 
 

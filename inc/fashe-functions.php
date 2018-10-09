@@ -256,5 +256,24 @@ function fashe_inline_bg_img( $bgUrl ){
     return $bg;
 }
 
+//  customize sidebar option value return
+function fashe_sidebar_opt(){
 
+    $sidebarOpt = fashe_opt( 'fashe-sidebarlayouts-settings' );
+    $sidebar = '1';
+    // Blog Sidebar layout  opt
+    if( is_array( $sidebarOpt ) ){
+        $sidebarOpt =  $sidebarOpt;
+    }else{
+        $sidebarOpt =  json_decode( $sidebarOpt, true );
+    }
+    
+    
+    if( !empty( $sidebarOpt['columnsCount'] ) ){
+        $sidebar = $sidebarOpt['columnsCount'];
+    }
+
+
+    return $sidebar;
+}
 ?>

@@ -24,10 +24,37 @@
 		// Minimum PHP version required 
 		private $min_php = '5.6.25';
 
+		function __construct(){
+
+			// After setup theme
+			add_action( 'after_setup_theme', array( $this, 'support' ) );
+			// elementor flag
+			add_action( 'after_switch_theme', array( $this, 'set_elementor_flag' ) );
+			// Enqueue elementor theme default style 
+			add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'enqueue_elementor_theme_default_style' ) );
+			// Enqueue elementor notice script
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_elementor_notice_script' ) );
+			// Elementor desiable default style
+			add_action( 'wp_ajax_elementor_desiable_default_style' , array( $this, 'elementor_desiable_default_style' ) );
+
+			// initialize theme flag
+			$this->init();
+			
+		}
+
 		// Theme init
 		public function init(){
 			
 			$this->setup();
+
+			// customizer init Instantiate
+			if( class_exists('Epsilon_Framework') ){
+				$this->customizer_init();
+			}
+			
+			// Instantiate  Dashboard
+			$Epsilon_init_Dashboard = Epsilon_init_Dashboard::get_instance();
+
 		}
 
 		// Theme setup
@@ -259,6 +286,126 @@
 
 		} //End google_font method
 
+		/**
+		 * Epsilon customizer
+		 *
+		 */
+
+		// epsilon customizer init
+		private function customizer_init(){
+
+			// epsilon customizer quickie settings
+		
+			add_filter( 'epsilon_quickie_bar_shortcuts', array( $this, 'epsilon_quickie' ) );
+			
+			// Instantiate Epsilon Framework object
+			$Epsilon_Framework = new Epsilon_Framework();
+
+			
+			// Instantiate fashe theme customizer
+			$fashe_theme_customizer = new fashe_theme_customizer();
+		}
+
+		public function epsilon_quickie(){
+
+				return	array(
+
+				'links' => array(
+					array(
+						'link_to'   => 'fashe_options_panel',
+						'icon'      => 'dashicons dashicons-admin-tools',
+						'link_type' => 'panel',
+					),
+					array(
+						'link_to'   => 'nav_menus',
+						'icon'      => 'dashicons dashicons-menu',
+						'link_type' => 'panel',
+					),
+					array(
+						'link_to'   => 'widgets',
+						'icon'      => 'dashicons dashicons-archive',
+						'link_type' => 'panel',
+					),
+					array(
+						'link_to'   => 'custom_css',
+						'icon'      => 'dashicons dashicons-editor-code',
+						'link_type' => 'section',
+					),
+
+				),
+				'logo'  => array(
+					'url' => EPSILON_URI . '/assets/img/epsilon-logo.png',
+					'alt' => 'Epsilon Builder Logo',
+				),
+			);
+
+		}
+
+		/**
+		 * Notice for Elementor default style
+		 *
+		 */
+
+		// Check elementor preview page
+		public static function check_elementor_preview_page(){
+
+			if( ( isset( $_REQUEST['action'] ) && 'elementor' == $_REQUEST['action'] ) || isset( $_REQUEST['elementor-preview'] ) ){
+				return true;
+			}
+
+			return false;
+
+		}
+		// Set flag for elementor ( hooked in after switch theme )
+		public function set_elementor_flag(){
+			update_option( 'fashe_had_elementor', 'no' );
+		}
+		// Elementor dsiable default style
+		public function elementor_desiable_default_style(){
+
+			$nonce = $_POST['nonce'];
+			if ( ! wp_verify_nonce( $nonce, 'fashe-elementor-notice-nonce' ) ) {
+				return;
+			}
+			$reply = $_POST['reply'];
+			if ( ! empty( $reply ) ) {
+				if ( $reply == 'yes' ) {
+					update_option( 'elementor_disable_color_schemes', 'yes' );
+					update_option( 'elementor_disable_typography_schemes', 'yes' );
+				}
+				update_option( 'fashe_had_elementor', 'yes' );
+			}
+			die();
+
+		}
+		// Enqueue theme default style for elementor
+		public function enqueue_elementor_theme_default_style(){
+
+			$disabled_color_schemes      = get_option( 'elementor_disable_color_schemes' );
+			$disabled_typography_schemes = get_option( 'elementor_disable_typography_schemes' );
+
+			if ( $disabled_color_schemes === 'yes' && $disabled_typography_schemes === 'yes' ) {
+				wp_enqueue_style( 'fashe-elementor-default-style',  FASHE_DIR_CSS_URI. 'elementor-default-element-style.css', array(), $this->fashe_version );
+			}
+		}
+		// Enqueue elementor notice scripts
+		public function enqueue_elementor_notice_script(){
+
+			$had_elementor = get_option( 'fashe_had_elementor' );
+
+			if( $had_elementor == 'no' && self::check_elementor_preview_page() ){
+				wp_enqueue_script( 'fashe-elementor-notice', FASHE_DIR_JS_URI.'fashe-elementor-notice.js', array('jquery'), '1.0', true );
+				wp_localize_script(
+					'fashe-elementor-notice',
+					'fasheElementorNotice',
+					array(
+						'ajaxurl' => admin_url( 'admin-ajax.php' ),
+						'nonce'   => wp_create_nonce( 'fashe-elementor-notice-nonce' ),
+					)
+				);
+			}
+
+		}
 
 	} // End Class
 
