@@ -109,17 +109,8 @@
 	// Blog, single, search, archive pages column start hook function.
 	if( !function_exists('fashe_blog_col_start_cb') ){
 		function fashe_blog_col_start_cb(){
-			
-			$sidebarOpt = fashe_opt( 'fashe-sidebarlayouts-settings' );
-						
-			// Blog Sidebar layout  opt
-			$sidebarOpt =  json_decode( $sidebarOpt, true );
-			
-			if( !empty( $sidebarOpt['columnsCount'] ) ){
-				$sidebarOpt = $sidebarOpt['columnsCount'];
-			}else{
-				$sidebarOpt = '';
-			}
+	
+			$sidebarOpt = fashe_sidebar_opt();
 						
 			//
 			if( !is_page() ){
@@ -351,17 +342,8 @@
 	if( !function_exists('fashe_blog_sidebar_cb') ){
 		function fashe_blog_sidebar_cb(){
 			
-			$sidebarOpt = fashe_opt( 'fashe-sidebarlayouts-settings' );			
-			
-			// Blog Sidebar layout  opt
-			$sidebarOpt =  json_decode( $sidebarOpt, true );
-			
-			if( !empty( $sidebarOpt['columnsCount'] ) ){
-				$sidebarOpt = $sidebarOpt['columnsCount'];
-			}else{
-				$sidebarOpt = '';
-			}
-			
+			$sidebarOpt = fashe_sidebar_opt();
+		
 			if( !fashe_is_cca_page() ){
 				if( $sidebarOpt != '1'  || is_page()  ){
 					get_sidebar();
