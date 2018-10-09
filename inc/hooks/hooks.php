@@ -12,14 +12,6 @@
 		exit( 'Direct script access denied.' );
 	}
 
-	/**
-	 *
-	 * Before Wrapper
-	 *
-	 * @Preloader
-	 *
-	 */
-	add_action( 'fashe_preloader', 'fashe_site_preloader', 10 );
 
 	/**
 	 * Header

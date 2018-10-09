@@ -46,9 +46,9 @@
 	if( !defined( 'FASHE_DIR_PATH_INC' ) )
 		define( 'FASHE_DIR_PATH_INC', FASHE_DIR_PATH.'inc/' );
 	
-	//Fashe framework Folder Directory
-	if( !defined( 'FASHE_DIR_PATH_FRAM' ) )
-		define( 'FASHE_DIR_PATH_FRAM', FASHE_DIR_PATH_INC.'fashe-framework/' );
+	//Fashe Libraries Folder Directory
+	if( !defined( 'FASHE_DIR_PATH_LIBS' ) )
+		define( 'FASHE_DIR_PATH_LIBS', FASHE_DIR_PATH_INC.'libraries/' );
 	
 	//Classes Folder Directory
 	if( !defined( 'FASHE_DIR_PATH_CLASSES' ) )
@@ -77,39 +77,36 @@
 	require_once( FASHE_DIR_PATH_INC . 'fashe-woo-functions.php' );
 	require_once( FASHE_DIR_PATH_INC . 'wp-html-helper.php' );
 	require_once( FASHE_DIR_PATH_INC . 'wp_bootstrap_pagination.php' );
-	require_once( FASHE_DIR_PATH_FRAM . 'customizer/sanitization-callbacks.php' );
-	require_once( FASHE_DIR_PATH_FRAM . 'customizer/customizer.php' );
-	require_once( FASHE_DIR_PATH_FRAM . 'epsilon-framework/class-epsilon-framework.php' );
-	require FASHE_DIR_PATH_INC . 'welcome-screen/class-fashe.php';
 
+	// require_once( FASHE_DIR_PATH_FRAM . 'customizer/sanitization-callbacks.php' );
+	// require_once( FASHE_DIR_PATH_FRAM . 'customizer/customizer.php' );
 	//
 	require_once( FASHE_DIR_PATH_CLASSES . 'Class-Enqueue.php' );
 	require_once( FASHE_DIR_PATH_CLASSES . 'Class-Config.php' );
 	require_once( FASHE_DIR_PATH_HOOKS . 'hooks.php' );
 	require_once( FASHE_DIR_PATH_HOOKS . 'hooks-functions.php' );
-	
-	
-	// Fashe global variable define
-	global $fashe;
-	$fashe['fasheobj'] = new Fashe();
-	
-	
-	// Fashe theme support
-	add_action( 'after_setup_theme', 'fashe_themesupport' );
-	function fashe_themesupport(){
-		global $fashe;
-		$fasheobj = $fashe['fasheobj'];
-		$fasheobj->support();
-	}
-	
-	// Fashe theme init
-	add_action( 'init', 'fashe_init' );
-	function fashe_init(){
-		global $fashe;
-		$fasheobj = $fashe['fasheobj'];
-		$fasheobj->init();
-	}
 
+
+	require_once( FASHE_DIR_PATH_INC . 'customizer/customizer.php' );
+	require_once( FASHE_DIR_PATH_INC . 'class-epsilon-dashboard-autoloader.php' );
+	require_once( FASHE_DIR_PATH_INC . 'class-epsilon-init-dashboard.php' );
+
+	// require_once( FASHE_DIR_PATH_FRAM . 'epsilon-framework/class-epsilon-framework.php' );
+	// require FASHE_DIR_PATH_INC . 'welcome-screen/class-fashe.php';
+
+
+	
+	/**
+	 * 
+	 * Initialize fashe object
+	 * 
+	 * Inside this object:
+	 *
+	 * Enqueue scripts, Google font, theme support features, Epsilon Dashboard .
+	 *
+	 */
+
+	$fashe = new Fashe();
 
 	
 ?>
