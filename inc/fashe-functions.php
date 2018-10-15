@@ -276,4 +276,24 @@ function fashe_sidebar_opt(){
 
     return $sidebar;
 }
+//  customize sidebar option value return
+function fashe_global_header_opt(){
+
+    $sidebarOpt = fashe_opt( 'fashe-header-layout' );
+    $sidebar = '1';
+    // Blog Sidebar layout  opt
+    if( is_array( $sidebarOpt ) ){
+        $sidebarOpt =  $sidebarOpt;
+    }else{
+        $sidebarOpt =  json_decode( $sidebarOpt, true );
+    }
+    
+    
+    if( !empty( $sidebarOpt['columnsCount'] ) ){
+        $sidebar = $sidebarOpt['columnsCount'];
+    }
+
+
+    return $sidebar;
+}
 ?>
