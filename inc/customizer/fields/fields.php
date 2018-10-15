@@ -36,6 +36,37 @@ Epsilon_Customizer::add_field(
         'default'     => true,
     )
 );
+// Blog sidebar layout field
+Epsilon_Customizer::add_field(
+    'fashe-header-layout',
+    array(
+        'type'     => 'epsilon-layouts',
+        'label'    => esc_html__( 'Global Header Layout', 'fashe' ),
+        'section'  => 'fashe_general_options_section',
+        'description' => esc_html__( 'Select global header layout.', 'fashe' ),
+        'layouts'  => array(
+            '1' => get_template_directory_uri() . '/assets/img/thumb1.png',
+            '2' => get_template_directory_uri() . '/assets/img/thumb2.png',
+            '3' => get_template_directory_uri() . '/assets/img/thumb3.png',
+        ),
+        'default'  => array(
+            'columnsCount' => 1,
+            'columns'      => array(
+                1 => array(
+                    'index' => 1,
+                ),
+                2 => array(
+                    'index' => 2,
+                ),
+                3 => array(
+                    'index' => 3,
+                ),
+            ),
+        ),
+        'min_span' => 4,
+        'fixed'    => true
+    )
+);
 // Header login url field
 Epsilon_Customizer::add_field(
     'fashe_login_url',
