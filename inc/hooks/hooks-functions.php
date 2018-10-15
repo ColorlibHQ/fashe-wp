@@ -26,7 +26,7 @@
 				$pageheader = get_post_meta( $currentPageId, '_fashe_page_header', true );
 
 				if( !$homeStyle ){
-					$homeStyle = '1';
+					$homeStyle = fashe_global_header_opt();
 				}
 																
 				get_template_part( 'templates/header', 'top'.esc_html( $homeStyle ) );
