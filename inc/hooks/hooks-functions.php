@@ -120,11 +120,8 @@
 					$col = '9'.$pullRight;
 				}else{
 
-					if( !is_single() ){
-						$col = '12';
-					}else{
-						$col = '10 offset-lg-1';
-					}
+					$col = '10 offset-lg-1';
+				
 
 				}
 			}else{

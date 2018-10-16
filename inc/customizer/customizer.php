@@ -25,12 +25,18 @@ class fashe_theme_customizer {
 
         // Change panel to theme option
         $wp_customize->get_section( 'title_tagline' )->panel      = 'fashe_theme_options_panel';
+        
         // change priorities
         $wp_customize->get_section( 'title_tagline' )->priority     = 0;
+
 
         // Copyright text selective refresh
         $wp_customize->selective_refresh->add_partial( 'fashe-copyright-text-settings', 
         array( 'selector' => '.footer-copy-right-text' ) );
+
+        // login button selective refresh
+        $wp_customize->selective_refresh->add_partial( 'fashe_login_url', 
+        array( 'selector' => '.header-wrapicon1' ) );
 
 
     }
