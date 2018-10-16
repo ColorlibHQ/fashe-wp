@@ -102,14 +102,18 @@
      *
      * Removes the "shop" title on the main shop page
      */
-    if( !fashe_opt('fashe-woo-shoppage-title-settings') ){
-    	add_filter( 'woocommerce_show_page_title' , 'fashe_hide_page_title' );
-    }
-
+    
+    add_filter( 'woocommerce_show_page_title' , 'fashe_hide_page_title' );
 
     function fashe_hide_page_title() {
 
-    	return false;
+        if( !fashe_opt('fashe-woo-shoppage-title-settings') ){
+            $title = false;
+        }else{
+            $title = true;
+        }
+
+    	return $title;
     	
     }
     /**

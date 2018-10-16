@@ -254,8 +254,8 @@ class Epsilon_Dashboard_Setup {
 				'recommended' => false,
 			),
 			'weglot' => array(
-				'integration' => true,
-				'recommended' => false,
+				'integration' => false,
+				'recommended' => true,
 			),
 			'one-click-demo-import' => array(
 				'integration' => true,
@@ -276,7 +276,6 @@ class Epsilon_Dashboard_Setup {
 			unset( $arr['contact-form-7'] );
 			unset( $arr['fashe-companion'] );
 			unset( $arr['woocommerce'] );
-			unset( $arr['weglot'] );
 			unset( $arr['elementor'] );
 			unset( $arr['one-click-demo-import'] );
 		}
@@ -340,21 +339,6 @@ class Epsilon_Dashboard_Setup {
 				),
 			),
 			array(
-				'id'          => 'fashe-check-weglot',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'weglot', 'title', 'Weglot Translate' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'weglot', 'description', 'Weglot Translate' ),
-				'plugin_slug' => 'weglot',
-				'state'       => false,
-				'check'       => defined( 'WEGLOT_VERSION' ),
-				'actions'     => array(
-					array(
-						'label'   => Epsilon_Init_Notify_System::plugin_verifier( 'weglot', 'installed', 'Weglot Translate' ) ? __( 'Activate Plugin', 'fashe' ) : __( 'Install Plugin', 'fashe' ),
-						'type'    => 'handle-plugin',
-						'handler' => Epsilon_Init_Notify_System::plugin_verifier( 'weglot', 'installed', 'Weglot Translate' ),
-					),
-				),
-			),
-			array(
 				'id'          => 'fashe-check-woocommerce',
 				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'woocommerce', 'title', 'Woocommerce' ),
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'woocommerce', 'description', 'Woocommerce' ),
@@ -413,13 +397,6 @@ class Epsilon_Dashboard_Setup {
 				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'elementor', 'description', 'Elementor' ),
 				'plugin_slug' => 'elementor',
 				'check'       => defined( 'ELEMENTOR_VERSION' ),
-			),
-			array(
-				'id'          => 'fashe-check-weglot',
-				'title'       => Epsilon_Init_Notify_System::plugin_verifier( 'weglot', 'title', 'Weglot Translate' ),
-				'description' => Epsilon_Init_Notify_System::plugin_verifier( 'weglot', 'description', 'Weglot Translate' ),
-				'plugin_slug' => 'weglot',
-				'check'       => defined( 'WEGLOT_VERSION' ),
 			),
 			array(
 				'id'          => 'fashe-check-woocommerce',
