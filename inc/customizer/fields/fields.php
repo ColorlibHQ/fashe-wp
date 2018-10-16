@@ -36,7 +36,7 @@ Epsilon_Customizer::add_field(
         'default'     => true,
     )
 );
-// Blog sidebar layout field
+// Global header layout field
 Epsilon_Customizer::add_field(
     'fashe-header-layout',
     array(
@@ -115,7 +115,7 @@ Epsilon_Customizer::add_field(
     'fashe_themecolor',
     array(
         'type'        => 'epsilon-color-picker',
-        'label'       => esc_html__( 'Theme Color.', 'fashe' ),
+        'label'       => esc_html__( 'Theme Main Color.', 'fashe' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fashe_general_options_section',
         'default'     => '#e65540',
@@ -142,7 +142,8 @@ Epsilon_Customizer::add_field(
     'fashe_header_top_text',
     array(
         'type'        => 'text',
-        'label'       => esc_html__( 'Header Top Text ( For header style 1 )', 'fashe' ),
+        'label'       => esc_html__( 'Header Top Text', 'fashe' ),
+        'description' => esc_html__( 'Set header top text ( For header style 1 )', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
         'sanitize_callback' => 'sanitize_text_field',
         'default'     => 'Free shipping for standard order over $100'
@@ -153,7 +154,8 @@ Epsilon_Customizer::add_field(
     'fashe_header_promo_text',
     array(
         'type'        => 'text',
-        'label'       => esc_html__( 'Header Promo Text ( For header style 2 and 3 )', 'fashe' ),
+        'label'       => esc_html__( 'Header Promo Text', 'fashe' ),
+        'description' => esc_html__( 'Set header promo text ( For header style 2 and 3 )', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
         'sanitize_callback' => 'sanitize_text_field',
         'default'     => '20% off everything!'
@@ -164,7 +166,8 @@ Epsilon_Customizer::add_field(
     'fashe_header_promoanchor_text',
     array(
         'type'        => 'text',
-        'label'       => esc_html__( 'Header Promo Link Text ( For header style 2 and 3 )', 'fashe' ),
+        'label'       => esc_html__( 'Header Promo Link Text', 'fashe' ),
+        'description' => esc_html__( 'Set header promo link text ( For header style 2 and 3 )', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
         'sanitize_callback' => 'sanitize_text_field',
         'default'     => 'Shop Now'
@@ -175,7 +178,8 @@ Epsilon_Customizer::add_field(
     'fashe_header_promoanchor_url',
     array(
         'type'        => 'text',
-        'label'       => esc_html__( 'Header Promo Link Url ( For header style 2 and 3 )', 'fashe' ),
+        'label'       => esc_html__( 'Header Promo Link Url', 'fashe' ),
+        'description' => esc_html__( 'Set header promo link url ( For header style 2 and 3 )', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
         'sanitize_callback' => 'sanitize_text_field',
         'default'     => '#'
@@ -211,7 +215,7 @@ Epsilon_Customizer::add_field(
     'fashe_header_top_bgColor',
     array(
         'type'        => 'epsilon-color-picker',
-        'label'       => esc_html__( 'Header To Background Color', 'fashe' ),
+        'label'       => esc_html__( 'Header Top Background Color', 'fashe' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fashe_headertop_options_section',
         'default'     => '#f5f5f5',
@@ -222,7 +226,7 @@ Epsilon_Customizer::add_field(
     'fashe_header_top_textColor',
     array(
         'type'        => 'epsilon-color-picker',
-        'label'       => esc_html__( 'Header To Text Color', 'fashe' ),
+        'label'       => esc_html__( 'Header Top Text Color', 'fashe' ),
         'sanitize_callback' => 'sanitize_text_field',
         'section'     => 'fashe_headertop_options_section',
         'default'     => '#888888',
@@ -310,11 +314,17 @@ Epsilon_Customizer::add_field(
 Epsilon_Customizer::add_field(
     'fashe_woo_product_perpage',
     array(
-        'type'        => 'text',
-        'label'       => esc_html__( 'Shop product per page ( Default 10 )', 'fashe' ),
+        'type'        => 'epsilon-slider',
+        'label'       => esc_html__( 'Shop product per page', 'fashe' ),
+        'description' => esc_html__( 'Set shop product per page ( Default 10 ).', 'fashe' ),
         'section'     => 'fashe_woocommerce_options_section',
         'sanitize_callback' => 'sanitize_text_field',
-        'default'     => '10',
+        'choices'     => array(
+            'min'  => 1,
+            'max'  => 30,
+            'step' => 1,
+        ),
+        'default'     => '10'
     )
 );
 
@@ -322,11 +332,17 @@ Epsilon_Customizer::add_field(
 Epsilon_Customizer::add_field(
     'fashe_related_product_number',
     array(
-        'type'        => 'text',
-        'label'       => esc_html__( 'Related product per section ( Default 4 )', 'fashe' ),
+        'type'        => 'epsilon-slider',
+        'label'       => esc_html__( 'Related product per section', 'fashe' ),
+        'description' => esc_html__( 'Set single page related product per section ( Default 4 ).', 'fashe' ),
         'section'     => 'fashe_woocommerce_options_section',
         'sanitize_callback' => 'sanitize_text_field',
-        'default'     => '4',
+        'choices'     => array(
+            'min'  => 1,
+            'max'  => 10,
+            'step' => 1,
+        ),
+        'default'     => '4'
     )
 );
 

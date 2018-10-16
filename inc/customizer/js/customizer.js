@@ -32,6 +32,23 @@
 
     } );
 
+    // Customizer shop page redirect
+    api.section( 'fashe_woocommerce_options_section' , function( section ){
+
+        section.expanded.bind( function( isExpanded ){
+
+            if( isExpanded ){
+                api.previewer.previewUrl.set( api.settings.url.home+'/shop' );
+            }else{
+                api.previewer.previewUrl.set( api.settings.url.home );
+            }
+            
+
+
+        } )
+
+    } );
+
 
 
 })( jQuery, wp.customize );
