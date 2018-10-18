@@ -232,6 +232,17 @@ Epsilon_Customizer::add_field(
         'default'     => '#888888',
     )
 );
+// Page Header Text Color Picker
+Epsilon_Customizer::add_field(
+    'fashe_headertextcolor',
+    array(
+        'type'        => 'epsilon-color-picker',
+        'label'       => esc_html__( 'Header Text Color', 'fashe' ),
+        'sanitize_callback' => 'sanitize_text_field',
+        'section'     => 'colors',
+        'default'     => '#fff',
+    )
+);
 // Page Header Background Color Picker
 Epsilon_Customizer::add_field(
     'fashe_headerbgcolor',
