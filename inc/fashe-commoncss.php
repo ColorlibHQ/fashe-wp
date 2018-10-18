@@ -20,7 +20,7 @@ function fashe_common_custom_css(){
 		$topbarBg          = fashe_opt( 'fashe_header_top_bgColor' );
 		$topbarColor       = fashe_opt( 'fashe_header_top_textColor' );
 		$headerBg          = get_header_image();
-		$headerTextColor   = get_header_textcolor();
+		$headerTextColor   = fashe_opt('fashe_headertextcolor');
 		$headerbgcolor     = fashe_opt('fashe_headerbgcolor');
 		$foftext1     	   = fashe_opt('fashe_fof_textonecolor_settings');
 		$foftext2     	   = fashe_opt('fashe_fof_texttwocolor_settings');
@@ -85,7 +85,7 @@ function fashe_common_custom_css(){
 				background-image: url( {$headerBg} );
 			}
 			.bg-title-page .l-text2 {
-				color: #{$headerTextColor};
+				color: {$headerTextColor};
 			}
 			.bg-title-page.global-page-header{
 				background-color: {$headerbgcolor}
