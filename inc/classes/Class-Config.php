@@ -91,14 +91,12 @@
 			
 			// Custom data center thumbnails size
 			add_image_size( 'fashe_widget_post_thumb', 370, 277, true );
-
-	        // support custom background 
-	        add_theme_support( 'custom-background', array(
-			'default-color' => '#fff',
-			) );
 	        
 	        // support custom header
-	        add_theme_support( 'custom-header' );
+
+	        add_theme_support( 'custom-header', array(
+	        	'header-text'	=> false,
+	        ) );
 	        
 	        // support automatic feed links
 	        add_theme_support( 'automatic-feed-links' );
