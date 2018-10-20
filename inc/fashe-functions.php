@@ -13,9 +13,9 @@
     }
 
  // theme option callback
-function fashe_opt( $id = null ){
+function fashe_opt( $id = null, $default = '' ){
 	
-	$opt = get_theme_mod( $id );
+	$opt = get_theme_mod( $id, $default );
 	
 	$data = '';
 	
