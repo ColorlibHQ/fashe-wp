@@ -26,16 +26,18 @@ Epsilon_Customizer::add_field(
     )
 );
 // Cart button option field
-Epsilon_Customizer::add_field(
-    'fashe-cart-toggle-settings',
-    array(
-        'type'        => 'epsilon-toggle',
-        'label'       => esc_html__( 'Header Cart Button', 'fashe' ),
-        'description' => esc_html__( 'Toggle the display of the header cart button.', 'fashe' ),
-        'section'     => 'fashe_general_options_section',
-        'default'     => false,
-    )
-);
+if( defined( 'WC_PLUGIN_FILE' ) ){
+    Epsilon_Customizer::add_field(
+        'fashe-cart-toggle-settings',
+        array(
+            'type'        => 'epsilon-toggle',
+            'label'       => esc_html__( 'Header Cart Button', 'fashe' ),
+            'description' => esc_html__( 'Toggle the display of the header cart button.', 'fashe' ),
+            'section'     => 'fashe_general_options_section',
+            'default'     => false,
+        )
+    );
+}
 // Global header layout field
 Epsilon_Customizer::add_field(
     'fashe-header-layout',
@@ -134,7 +136,7 @@ Epsilon_Customizer::add_field(
     array(
         'type'        => 'epsilon-toggle',
         'label'       => esc_html__( 'Header Social Show/Hide', 'fashe' ),
-        'description' => esc_html__( 'Toggle the header top social active.', 'fashe' ),
+        'description' => esc_html__( 'Toggle the header top social active. Before toggle make sure you have create social menu from Appearance > menus.', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
         'default'     => false,
     )
