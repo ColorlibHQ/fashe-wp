@@ -17,20 +17,20 @@ function fashe_common_custom_css(){
     
     wp_enqueue_style( 'fashe-common', get_template_directory_uri().'/assets/css/common.css' );
 		
-		$topbarBg          = fashe_opt( 'fashe_header_top_bgColor' );
-		$topbarColor       = fashe_opt( 'fashe_header_top_textColor' );
-		$headerBg          = get_header_image();
-		$headerTextColor   = fashe_opt('fashe_headertextcolor');
-		$headerbgcolor     = fashe_opt('fashe_headerbgcolor');
-		$foftext1     	   = fashe_opt('fashe_fof_textonecolor_settings');
-		$foftext2     	   = fashe_opt('fashe_fof_texttwocolor_settings');
-		$fofbgcolor        = fashe_opt('fashe_fof_bgcolor_settings');
-		$footerbgColor     = fashe_opt('fashe_footer_bgColor_settings');
-		$footerTextColor   = fashe_opt('fashe_footer_color_settings');
-		$anchorcolor 	   = fashe_opt('fashe_footer_anchorcolor_settings');
-		$anchorhovcolor    = fashe_opt('fashe_footer_anchorhovcolor_settings');
-		$widgettitlecolor  = fashe_opt('fashe_footer_widgettitlecolor_settings');
-		$themecolor  	   = fashe_opt('fashe_themecolor');
+		$topbarBg          = esc_attr( fashe_opt( 'fashe_header_top_bgColor' ) );
+		$topbarColor       = esc_attr( fashe_opt( 'fashe_header_top_textColor' ) );
+		$headerBg          = esc_url( get_header_image() );
+		$headerTextColor   = esc_attr( fashe_opt('fashe_headertextcolor') );
+		$headerbgcolor     = esc_attr( fashe_opt('fashe_headerbgcolor') );
+		$foftext1     	   = esc_attr( fashe_opt('fashe_fof_textonecolor_settings') );
+		$foftext2     	   = esc_attr( fashe_opt('fashe_fof_texttwocolor_settings') );
+		$fofbgcolor        = esc_attr( fashe_opt('fashe_fof_bgcolor_settings') );
+		$footerbgColor     = esc_attr( fashe_opt('fashe_footer_bgColor_settings') );
+		$footerTextColor   = esc_attr( fashe_opt('fashe_footer_color_settings') );
+		$anchorcolor 	   = esc_attr( fashe_opt('fashe_footer_anchorcolor_settings') );
+		$anchorhovcolor    = esc_attr( fashe_opt('fashe_footer_anchorhovcolor_settings') );
+		$widgettitlecolor  = esc_attr( fashe_opt('fashe_footer_widgettitlecolor_settings') );
+		$themecolor  	   = esc_attr( fashe_opt('fashe_themecolor') );
 
         $customcss ="
         	[data-loader='ball-scale'],
