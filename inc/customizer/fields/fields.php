@@ -82,12 +82,15 @@ Epsilon_Customizer::add_field(
 );
 
 // Instagram Access Token field
+
+$url = 'https://www.instagram.com/developer/authentication/';
+
 Epsilon_Customizer::add_field(
     'fashe_igaccess_token',
     array(
         'type'              => 'text',
         'label'             => esc_html__( 'Instagram Access Token', 'fashe' ),
-        'description'       => esc_html__( 'Set instagram access token.', 'fashe' ),
+        'description'       => sprintf( __( 'Set instagram access token. To get access token %s click here %s.', 'fashe' ), '<a target="_blank" href="'.esc_url( $url  ).'">', '</a>' ),
         'section'           => 'fashe_general_options_section',
         'sanitize_callback' => 'sanitize_text_field',
         'default'           => '',
