@@ -201,18 +201,22 @@ Epsilon_Customizer::add_field(
     )
 );
 
-// Language Translate
-Epsilon_Customizer::add_field(
-    'fashe-headerTranslate-toggle-settings',
-    array(
-        'type'        => 'epsilon-toggle',
-        'label'       => esc_html__( 'Language Translate Option Show/Hide', 'fashe' ),
-        'description' => esc_html__( 'Toggle the header language translate show.', 'fashe' ),
-        'section'     => 'fashe_headertop_options_section',
-        'default'     => true,
-    )
-);
 
+// Language Translate
+
+if( defined( 'WEGLOT_VERSION' ) ){
+
+    Epsilon_Customizer::add_field(
+        'fashe-headerTranslate-toggle-settings',
+        array(
+            'type'        => 'epsilon-toggle',
+            'label'       => esc_html__( 'Language Translate Option Show/Hide', 'fashe' ),
+            'description' => esc_html__( 'Toggle the header language translate show.', 'fashe' ),
+            'section'     => 'fashe_headertop_options_section',
+            'default'     => true,
+        )
+    );
+}
 // Header Top Background Color Picker
 Epsilon_Customizer::add_field(
     'fashe_header_top_bgColor',
