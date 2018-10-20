@@ -51,9 +51,10 @@
 
 <!-- top noti -->
 <?php 
-$promotext 	 = fashe_opt( 'fashe_header_promo_text' );
-$promoanchor = fashe_opt( 'fashe_header_promoanchor_text' );
-$promoanchorurl = fashe_opt( 'fashe_header_promoanchor_url' );
+$promotext 	 = fashe_opt( 'fashe_header_promo_text', __( '20% off everything!', 'fashe' ) );
+$promoanchor = fashe_opt( 'fashe_header_promoanchor_text', __( 'Shop Now', 'fashe' ) );
+$promoanchorurl = fashe_opt( 'fashe_header_promoanchor_url', '#' );
+
 if( $promotext ):
 ?>
 <div class="flex-c-m size22 bg0 s-text21 pos-relative">
@@ -101,7 +102,8 @@ endif;
 			<div class="topbar-child2">
 				<?php 
 				// Email
-				$email = fashe_opt( 'fashe_header_top_email' );
+				$email = fashe_opt( 'fashe_header_top_email', 'fashe@example.com' );
+
 				if( $email ){
 					echo '<span class="topbar-email">'.esc_html( $email ).'</span>';
 				}
@@ -203,7 +205,9 @@ endif;
 		<nav class="side-menu">
 			<ul class="main-menu">
 				<?php 
-				$text = fashe_opt('fashe_header_top_text');
+
+				$text = fashe_opt('fashe_header_top_text', __( 'Free shipping for standard order over $100', 'fashe' ) );
+
 				if( $text ):
 				?>
 				<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">

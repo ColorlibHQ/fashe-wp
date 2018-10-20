@@ -17,7 +17,7 @@
 			}
 		}
 		// Header Top Text
-		$text = fashe_opt('fashe_header_top_text');
+		$text = fashe_opt('fashe_header_top_text', __( 'Free shipping for standard order over $100', 'fashe' ) );
 		if( $text ){
 			echo '<span class="topbar-child1">'.esc_html( $text ).'</span>';
 		}
@@ -26,7 +26,7 @@
 		<div class="topbar-child2">
 			<?php 
 			// Email
-			$email = fashe_opt( 'fashe_header_top_email' );
+			$email = fashe_opt( 'fashe_header_top_email', 'fashe@example.com' );
 			if( $email ){
 				echo '<span class="topbar-email">'.esc_html( $email ).'</span>';
 			}

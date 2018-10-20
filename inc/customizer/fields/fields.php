@@ -33,7 +33,7 @@ Epsilon_Customizer::add_field(
         'label'       => esc_html__( 'Header Cart Button', 'fashe' ),
         'description' => esc_html__( 'Toggle the display of the header cart button.', 'fashe' ),
         'section'     => 'fashe_general_options_section',
-        'default'     => true,
+        'default'     => false,
     )
 );
 // Global header layout field
@@ -136,7 +136,7 @@ Epsilon_Customizer::add_field(
         'label'       => esc_html__( 'Header Social Show/Hide', 'fashe' ),
         'description' => esc_html__( 'Toggle the header top social active.', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
-        'default'     => true,
+        'default'     => false,
     )
 );
 
@@ -149,7 +149,7 @@ Epsilon_Customizer::add_field(
         'description' => esc_html__( 'Set header top text ( For header style 1 )', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
         'sanitize_callback' => 'sanitize_text_field',
-        'default'     => 'Free shipping for standard order over $100'
+        'default'     => __( 'Free shipping for standard order over $100', 'fashe' )
     )
 );
 // Header Promo text
@@ -161,7 +161,7 @@ Epsilon_Customizer::add_field(
         'description' => esc_html__( 'Set header promo text ( For header style 2 and 3 )', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
         'sanitize_callback' => 'sanitize_text_field',
-        'default'     => '20% off everything!'
+        'default'     => __( '20% off everything!', 'fashe' )
     )
 );
 // Header Promo link text
@@ -173,7 +173,7 @@ Epsilon_Customizer::add_field(
         'description' => esc_html__( 'Set header promo link text ( For header style 2 and 3 )', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
         'sanitize_callback' => 'sanitize_text_field',
-        'default'     => 'Shop Now'
+        'default'     => __( 'Shop Now', 'fashe' )
     )
 );
 // Header Promo link url
