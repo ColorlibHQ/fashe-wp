@@ -57,7 +57,7 @@ $promoanchorurl = fashe_opt( 'fashe_header_promoanchor_url', '#' );
 
 if( $promotext ):
 ?>
-<div class="flex-c-m size22 bg0 s-text21 pos-relative">
+<div class="flex-c-m size22 promo-bar bg0 s-text21 pos-relative">
 	<?php 
 	if( $promotext ){
 		echo wp_kses_post( $promotext );

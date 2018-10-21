@@ -131,6 +131,7 @@
 
 			$cssPath = FASHE_DIR_CSS_URI;
 			$jsPath  = FASHE_DIR_JS_URI;
+
 			
 			$scripts = array(
 				'style' => array(
@@ -249,7 +250,7 @@
 					array(
 						'handler'		=> 'fashe-main',
 						'file' 			=> $jsPath.'main.js',
-						'dependency' 	=> array( 'jquery' ),
+						'dependency' 	=> array( 'jquery', 'jquery-slick' ),
 						'version' 		=> $this->fashe_version,
 						'in_footer' 	=> true
 					),

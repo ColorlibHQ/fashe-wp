@@ -58,24 +58,47 @@ function fashe_common_custom_css(){
 			.woocommerce #respond input#submit.alt:hover, 
 			.woocommerce a.button.alt:hover, 
 			.woocommerce button.button.alt:hover, 
-			.woocommerce input.button.alt:hover{
+			.woocommerce input.button.alt:hover,
+			.woocommerce button.button:hover,
+			.block2-overlay .add_to_cart_button:hover,
+			.woocommerce #respond input#submit:hover, 
+			.woocommerce a.button:hover, 
+			.woocommerce button.button:hover, 
+			.woocommerce input.button:hover, 
+			.woocommerce #respond input#submit.alt:hover, 
+			.woocommerce a.button.alt:hover, 
+			.woocommerce button.button.alt:hover, 
+			.woocommerce input.button.alt:hover,
+			.hov1:hover,
+			.eff2:active,
+			.woocommerce .woocommerce-cart-form #respond input#submit:hover, 
+			.woocommerce .woocommerce-cart-form a.button:hover, 
+			.woocommerce .woocommerce-cart-form button.button:hover, 
+			.woocommerce .woocommerce-cart-form input.button:hover,
+			.woocommerce-MyAccount-navigation-link a:hover {
 				background-color: {$themecolor};
 			}
+
 			.side-menu .sub-menu a:hover,
 			.block2-btn-towishlist .icon_heart,
 			.side-menu .sub-menu a:hover,
 			li.sale-noti > a,
         	.sub_menu > li:hover > a,
         	.inner-child-fof a:hover,
-			a:hover{
+			a:hover,
+			.color0-hov:hover {
 				color: {$themecolor};
 			}
+			.woocommerce-MyAccount-navigation-link a:hover,
 			.tag-item:hover{
 				border-color: {$themecolor};
 			}
+			.promo-bar.bg0,
 			.topbar{
 				background-color: {$topbarBg};
 			}
+			.promo-bar.bg0,
+			.promo-bar.bg0 a,
 			.topbar-social-item,
 			.topbar-email,
 			.topbar-child1{
@@ -87,6 +110,7 @@ function fashe_common_custom_css(){
 			.bg-title-page .l-text2 {
 				color: {$headerTextColor};
 			}
+
 			.bg-title-page.global-page-header{
 				background-color: {$headerbgcolor}
 			}
