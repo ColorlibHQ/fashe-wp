@@ -77,23 +77,13 @@
 	require_once( FASHE_DIR_PATH_INC . 'fashe-woo-functions.php' );
 	require_once( FASHE_DIR_PATH_INC . 'wp-html-helper.php' );
 	require_once( FASHE_DIR_PATH_INC . 'wp_bootstrap_pagination.php' );
-
-	// require_once( FASHE_DIR_PATH_FRAM . 'customizer/sanitization-callbacks.php' );
-	// require_once( FASHE_DIR_PATH_FRAM . 'customizer/customizer.php' );
-	//
 	require_once( FASHE_DIR_PATH_CLASSES . 'Class-Enqueue.php' );
 	require_once( FASHE_DIR_PATH_CLASSES . 'Class-Config.php' );
 	require_once( FASHE_DIR_PATH_HOOKS . 'hooks.php' );
 	require_once( FASHE_DIR_PATH_HOOKS . 'hooks-functions.php' );
-
-
 	require_once( FASHE_DIR_PATH_INC . 'customizer/customizer.php' );
 	require_once( FASHE_DIR_PATH_INC . 'class-epsilon-dashboard-autoloader.php' );
 	require_once( FASHE_DIR_PATH_INC . 'class-epsilon-init-dashboard.php' );
-
-	// require_once( FASHE_DIR_PATH_FRAM . 'epsilon-framework/class-epsilon-framework.php' );
-	// require FASHE_DIR_PATH_INC . 'welcome-screen/class-fashe.php';
-
 
 	
 	/**
