@@ -17,20 +17,20 @@ function fashe_common_custom_css(){
     
     wp_enqueue_style( 'fashe-common', get_template_directory_uri().'/assets/css/common.css' );
 		
-		$topbarBg          = fashe_opt( 'fashe_header_top_bgColor' );
-		$topbarColor       = fashe_opt( 'fashe_header_top_textColor' );
-		$headerBg          = get_header_image();
-		$headerTextColor   = fashe_opt('fashe_headertextcolor');
-		$headerbgcolor     = fashe_opt('fashe_headerbgcolor');
-		$foftext1     	   = fashe_opt('fashe_fof_textonecolor_settings');
-		$foftext2     	   = fashe_opt('fashe_fof_texttwocolor_settings');
-		$fofbgcolor        = fashe_opt('fashe_fof_bgcolor_settings');
-		$footerbgColor     = fashe_opt('fashe_footer_bgColor_settings');
-		$footerTextColor   = fashe_opt('fashe_footer_color_settings');
-		$anchorcolor 	   = fashe_opt('fashe_footer_anchorcolor_settings');
-		$anchorhovcolor    = fashe_opt('fashe_footer_anchorhovcolor_settings');
-		$widgettitlecolor  = fashe_opt('fashe_footer_widgettitlecolor_settings');
-		$themecolor  	   = fashe_opt('fashe_themecolor');
+		$topbarBg          = esc_attr( fashe_opt( 'fashe_header_top_bgColor' ) );
+		$topbarColor       = esc_attr( fashe_opt( 'fashe_header_top_textColor' ) );
+		$headerBg          = esc_url( get_header_image() );
+		$headerTextColor   = esc_attr( fashe_opt('fashe_headertextcolor') );
+		$headerbgcolor     = esc_attr( fashe_opt('fashe_headerbgcolor') );
+		$foftext1     	   = esc_attr( fashe_opt('fashe_fof_textonecolor_settings') );
+		$foftext2     	   = esc_attr( fashe_opt('fashe_fof_texttwocolor_settings') );
+		$fofbgcolor        = esc_attr( fashe_opt('fashe_fof_bgcolor_settings') );
+		$footerbgColor     = esc_attr( fashe_opt('fashe_footer_bgColor_settings') );
+		$footerTextColor   = esc_attr( fashe_opt('fashe_footer_color_settings') );
+		$anchorcolor 	   = esc_attr( fashe_opt('fashe_footer_anchorcolor_settings') );
+		$anchorhovcolor    = esc_attr( fashe_opt('fashe_footer_anchorhovcolor_settings') );
+		$widgettitlecolor  = esc_attr( fashe_opt('fashe_footer_widgettitlecolor_settings') );
+		$themecolor  	   = esc_attr( fashe_opt('fashe_themecolor') );
 
         $customcss ="
         	[data-loader='ball-scale'],
@@ -58,24 +58,47 @@ function fashe_common_custom_css(){
 			.woocommerce #respond input#submit.alt:hover, 
 			.woocommerce a.button.alt:hover, 
 			.woocommerce button.button.alt:hover, 
-			.woocommerce input.button.alt:hover{
+			.woocommerce input.button.alt:hover,
+			.woocommerce button.button:hover,
+			.block2-overlay .add_to_cart_button:hover,
+			.woocommerce #respond input#submit:hover, 
+			.woocommerce a.button:hover, 
+			.woocommerce button.button:hover, 
+			.woocommerce input.button:hover, 
+			.woocommerce #respond input#submit.alt:hover, 
+			.woocommerce a.button.alt:hover, 
+			.woocommerce button.button.alt:hover, 
+			.woocommerce input.button.alt:hover,
+			.hov1:hover,
+			.eff2:active,
+			.woocommerce .woocommerce-cart-form #respond input#submit:hover, 
+			.woocommerce .woocommerce-cart-form a.button:hover, 
+			.woocommerce .woocommerce-cart-form button.button:hover, 
+			.woocommerce .woocommerce-cart-form input.button:hover,
+			.woocommerce-MyAccount-navigation-link a:hover {
 				background-color: {$themecolor};
 			}
+
 			.side-menu .sub-menu a:hover,
 			.block2-btn-towishlist .icon_heart,
 			.side-menu .sub-menu a:hover,
 			li.sale-noti > a,
         	.sub_menu > li:hover > a,
         	.inner-child-fof a:hover,
-			a:hover{
+			a:hover,
+			.color0-hov:hover {
 				color: {$themecolor};
 			}
+			.woocommerce-MyAccount-navigation-link a:hover,
 			.tag-item:hover{
 				border-color: {$themecolor};
 			}
+			.promo-bar.bg0,
 			.topbar{
 				background-color: {$topbarBg};
 			}
+			.promo-bar.bg0,
+			.promo-bar.bg0 a,
 			.topbar-social-item,
 			.topbar-email,
 			.topbar-child1{
@@ -87,6 +110,7 @@ function fashe_common_custom_css(){
 			.bg-title-page .l-text2 {
 				color: {$headerTextColor};
 			}
+
 			.bg-title-page.global-page-header{
 				background-color: {$headerbgcolor}
 			}

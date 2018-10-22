@@ -53,14 +53,28 @@ class Epsilon_Init_Notify_System extends Epsilon_Notify_System {
 
 		// Translators: %s is the plugin name.
 		$arr['title'] = sprintf( __( 'Install: %s', 'fashe' ), $plugin_name );
+
+
+
 		// Translators: %s is the plugin name.
-		$arr['description'] = sprintf( __( 'Please install %s in order to create the demo content.', 'fashe' ), $plugin_name );
+		if( $slug == 'one-click-demo-import' ){
+			$arr['description'] = sprintf( __( 'Please install %s in order to create the demo content. After installing this plugin you will able to demo import from Appearance -> Import Demo Data', 'fashe' ), $plugin_name );
+		}else{
+			$arr['description'] = sprintf( __( 'Please install %s in order to create the demo content.', 'fashe' ), $plugin_name );
+		}
+		
 
 		if ( $arr['installed'] ) {
 			// Translators: %s is the plugin name
 			$arr['title'] = sprintf( __( 'Activate: %s', 'fashe' ), $plugin_name );
+
 			// Translators: %s is the plugin name
-			$arr['description'] = sprintf( __( 'Please activate %s in order to create the demo content.', 'fashe' ), $plugin_name );
+			if( $slug == 'one-click-demo-import' ){
+				$arr['description'] = sprintf( __( 'Please activate %s in order to create the demo content. After installing this plugin you will able to demo import from Appearance -> Import Demo Data', 'fashe' ), $plugin_name );
+			}else{
+				$arr['description'] = sprintf( __( 'Please activate %s in order to create the demo content.', 'fashe' ), $plugin_name );
+			}
+			
 		}
 
 		return $arr[ $get ];
