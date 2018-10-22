@@ -20,15 +20,22 @@
 				
 				$currentPageId = get_the_ID();
 
+				// Page layout from
+				$layoutfrom  = get_post_meta( $currentPageId, '_fashe_page_layout_from', true );
+
+				// Global header style
+				$homeStyle = fashe_global_header_opt();
+				
 				// Page style
-				$homeStyle  = get_post_meta( $currentPageId, '_fashe_page_style', true );
+				if( $layoutfrom && $layoutfrom == 'pagemeta' ){
+
+					$homeStyle  = get_post_meta( $currentPageId, '_fashe_page_style', true );
+
+				}
+
 				// Page header show/hide
 				$pageheader = get_post_meta( $currentPageId, '_fashe_page_header', true );
-
-				if( !$homeStyle ){
-					$homeStyle = fashe_global_header_opt();
-				}
-																
+															
 				get_template_part( 'templates/header', 'top'.esc_html( $homeStyle ) );
 
 					if( $homeStyle == '3' ){
