@@ -17,7 +17,7 @@ if( !fashe_is_cca_page() ){
 }
 
 ?>
-<div id="page_<?php the_ID(); ?>" <?php post_class( $contentclass ); ?>>
+<div id="page_<?php the_ID(); ?>" <?php post_class( esc_attr( $contentclass ) ); ?>>
 	<?php 
 
 	/**
