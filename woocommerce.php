@@ -43,7 +43,7 @@
 	</section>
 	<?php 
 	//Relate Product
-	if( is_product() ):
+	if( is_product() && fashe_opt( 'fashe-woo-related-product-settings' ) ):
 	?>
 	<section class="relateproduct bgwhite p-t-45 p-b-138">
 		<div class="container">
