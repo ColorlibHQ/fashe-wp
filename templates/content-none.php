@@ -35,10 +35,11 @@ if( !defined( 'ABSPATH' ) ){
 					?>
 				</div>
 			</div>
-
+			
 	<?php else : ?>
 
-	    <p><?php wp_kses_post( _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'fashe' ) ); ?></p>
+	    <p><?php wp_kses_post( _e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help.', 'fashe' ) ); ?></p>
+
 	    <?php get_search_form(); ?>
 
 	<?php endif; ?>
