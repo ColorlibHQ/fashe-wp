@@ -131,7 +131,7 @@ endif;
 				}
 				// Cart
 				if( $cart ){
-					fashe_cart_count( 'm-r-13' );
+					fashe_cart_count( 'm-l-13 m-r-13' );
 				}
 				?>
 			</div>

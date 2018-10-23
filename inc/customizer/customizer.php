@@ -34,6 +34,14 @@ class fashe_theme_customizer {
         $wp_customize->selective_refresh->add_partial( 'fashe-copyright-text-settings', 
         array( 'selector' => '.footer-copy-right-text' ) );
 
+        // Header cart selective refresh
+        $wp_customize->selective_refresh->add_partial( 'fashe-cart-toggle-settings', 
+        array( 'selector' => '.header-wrapicon2' ) );
+
+        // Back to top selective refresh
+        $wp_customize->selective_refresh->add_partial( 'fashe-gototop-toggle-settings', 
+        array( 'selector' => '.btn-back-to-top' ) );
+
         // login button selective refresh
         $wp_customize->selective_refresh->add_partial( 'fashe_login_url', 
         array( 'selector' => '.header-wrapicon1' ) );
