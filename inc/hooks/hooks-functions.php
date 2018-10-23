@@ -158,7 +158,9 @@
 		function fashe_blog_posts_thumb_cb(){
 			// Thumbnail Show
 			if( has_post_thumbnail() ){
-						
+
+				$date_format = get_option('date_format');
+
 				if( !is_single() ){
 				
 					$html = '';
@@ -169,7 +171,7 @@
 							'url' => esc_url( get_the_post_thumbnail_url() )
 						)
 					);
-					$html .= '<span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">'.esc_html( get_the_date( 'M j, Y' ) ).'</span>';
+					$html .= '<span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">'.esc_html( get_the_date( $date_format ) ).'</span>';
 					$html .= '</a>';
 				
 				}else{

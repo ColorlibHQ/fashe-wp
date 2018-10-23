@@ -318,6 +318,16 @@ Epsilon_Customizer::add_field(
     WooCommerce Section
 ***************************/
 
+// Shop page settings separator
+Epsilon_Customizer::add_field(
+    'fashe-woo-shop-separator',
+    array(
+        'type'        => 'epsilon-separator',
+        'label'       => esc_html__( 'Shop page settings', 'fashe' ),
+        'section'     => 'fashe_woocommerce_options_section',
+    )
+);
+
 // WooCommerce shop title show/hide option field
 Epsilon_Customizer::add_field(
     'fashe-woo-shoppage-title-settings',
@@ -347,7 +357,27 @@ Epsilon_Customizer::add_field(
         'default'     => '10'
     )
 );
-
+// Details page settings separator
+Epsilon_Customizer::add_field(
+    'fashe-woo-details-separator',
+    array(
+        'type'        => 'epsilon-separator',
+        'label'       => esc_html__( 'Product details page settings', 'fashe' ),
+        'description' => esc_html__( 'To see setting taking effect click on product to go product details.', 'fashe' ),
+        'section'     => 'fashe_woocommerce_options_section',
+    )
+);
+// Related Product Show hide
+Epsilon_Customizer::add_field(
+    'fashe-woo-related-product-settings',
+    array(
+        'type'        => 'epsilon-toggle',
+        'label'       => esc_html__( 'Related Product Show/Hide', 'fashe' ),
+        'description' => esc_html__( 'Toggle the related product show or hide in product details page.', 'fashe' ),
+        'section'     => 'fashe_woocommerce_options_section',
+        'default'     => true,
+    )
+);
 // Related Product number field
 Epsilon_Customizer::add_field(
     'fashe_related_product_number',
