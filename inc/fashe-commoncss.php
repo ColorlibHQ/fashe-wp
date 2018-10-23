@@ -75,7 +75,8 @@ function fashe_common_custom_css(){
 			.woocommerce .woocommerce-cart-form a.button:hover, 
 			.woocommerce .woocommerce-cart-form button.button:hover, 
 			.woocommerce .woocommerce-cart-form input.button:hover,
-			.woocommerce-MyAccount-navigation-link a:hover {
+			.woocommerce-MyAccount-navigation-link a:hover,
+			.bg0-hov:hover {
 				background-color: {$themecolor};
 			}
 
