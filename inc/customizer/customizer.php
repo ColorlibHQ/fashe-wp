@@ -38,6 +38,9 @@ class fashe_theme_customizer {
         $wp_customize->selective_refresh->add_partial( 'fashe_login_url', 
         array( 'selector' => '.header-wrapicon1' ) );
 
+        // Rename customizer color section
+        $wp_customize->get_section('colors')->title = __( 'Header Color', 'fashe' );
+
 
     }
 
