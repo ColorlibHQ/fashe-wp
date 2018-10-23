@@ -103,66 +103,13 @@ function fashe_comment_callback( $comment, $args, $depth ) {
 // add class comment reply link
 add_filter('comment_reply_link', 'fashe_replace_reply_link_class');
 function fashe_replace_reply_link_class( $class ){
-    $class = str_replace("class='comment-reply-link", "class='reply", $class);
+
+    $class = str_replace( "class='comment-reply-link", "class='reply", $class );
+
     return $class;
 }
 
-// social media
-if ( ! function_exists( 'fashe_social' ) ) {
-	function fashe_social( $args = array()  ){
-		
-		$default = array(
-			'wrapper_start' => '',
-			'wrapper_end'   => '',
-			'class'   		=> 'topbar-social',
-		);
-		
-		$args = wp_parse_args( $args, $default );
-		
-		
-		$url = fashe_opt('fashe_social_url');
-		if( is_array( $url ) && count( $url ) > 0 ):
-		
-		echo wp_kses_post( $args['wrapper_start'] );
-		
-			echo '<div class="'.esc_attr( $args['class'] ).'">';
-		
-			// Facebook
-			if( !empty( $url['facebook_url'] ) ){
-				echo '<a href="'.esc_url( $url['facebook_url'] ).'" class="topbar-social-item fa fa-facebook"></a>';
-			}
-			// Twitter
-			if( !empty( $url['twitter_url'] ) ){
-				echo '<a href="'.esc_url( $url['twitter_url'] ).'" class="topbar-social-item fa fa-twitter"></a>';
-			}
-			// Google
-			if( !empty( $url['google_url'] ) ){
-				echo '<a href="'.esc_url( $url['google_url'] ).'" class="topbar-social-item fa fa-google-plus"></a>';
-			}
-			// Instagram
-			if( !empty( $url['instagram_url'] ) ){
-				echo '<a href="'.esc_url( $url['instagram_url'] ).'" class="topbar-social-item fa fa-instagram"></a>';
-			}
-			// Pinterest
-			if( !empty( $url['pinterest_url'] ) ){
-				echo '<a href="'.esc_url( $url['pinterest_url'] ).'" class="topbar-social-item fa fa-pinterest-p"></a>';
-			}
-			// Snapchat
-			if( !empty( $url['snapchat_url'] ) ){
-				echo '<a href="'.esc_url( $url['snapchat_url'] ).'" class="topbar-social-item fa fa-snapchat-ghost"></a>';
-			}
-			// Youtube
-			if( !empty( $url['youtube_url'] ) ){
-				echo '<a href="'.esc_url( $url['youtube_url'] ).'" class="topbar-social-item fa fa-youtube-play"></a>';
-			}
-			
-		
-			echo '</div>';
-		echo wp_kses_post( $args['wrapper_end'] );
 
-		endif;
-	}
-}
 // header cart count
 function fashe_cart_count( $class= '' ){
 	if( fashe_is_wc_activated() ):

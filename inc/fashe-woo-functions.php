@@ -43,11 +43,14 @@
 	function fashe_change_number_related_products( $args ) {
 
         $number = 4;
+
         if( fashe_opt( 'fashe_related_product_number' ) ){
+
             $number = fashe_opt( 'fashe_related_product_number' );
+
         }
 
-		$args['posts_per_page'] = esc_html( $number ); // # of related products
+		$args['posts_per_page'] = absint( $number ); // # of related products
 
 		return $args;
 	}
@@ -147,12 +150,16 @@
       // Return the number of products you wanna show per page.
       
         if( fashe_opt( 'fashe_woo_product_perpage' ) ){
+
             $num = fashe_opt( 'fashe_woo_product_perpage' );
+            
         }else{
+
             $num = 10;
         }
       
-      $cols = esc_html( $num );
+      $cols = absint( $num );
+
       return $cols;
     }
 
