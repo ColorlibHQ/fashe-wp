@@ -41,7 +41,8 @@
 .woocommerce .woocommerce-cart-form button.button:hover, 
 .woocommerce .woocommerce-cart-form input.button:hover,
 .woocommerce-MyAccount-navigation-link a:hover,
-.promo-bar.bg0 {
+.promo-bar.bg0,
+.bg0-hov:hover {
     background-color: #e65540;
 }
 .side-menu .sub-menu a:hover,

@@ -32,7 +32,7 @@ if( !defined( 'ABSPATH' ) ){
 							// Wrong text block
 
 							$wrongText = wp_kses_post( __( 'Either something went wrong or the page dosen&rsquo;t exist anymore.', 'fashe' ) );
-							$gotoText = esc_html__( 'Go to.', 'fashe' );
+							$gotoText = esc_html__( 'Go to', 'fashe' );
 
 							if( fashe_opt('fashe_fof_text_two') ){
 								$wrongText = fashe_opt('fashe_fof_text_two');
@@ -47,7 +47,7 @@ if( !defined( 'ABSPATH' ) ){
 
 							echo fashe_paragraph_tag(
 								array(
-									'text' 	 => esc_html( $wrongText.' '.$gotoText ).' '.wp_kses_post( $anchor ),
+									'text' 	 => sprintf( '%s %s %s', esc_html( $wrongText ), esc_html( $gotoText ), wp_kses_post( $anchor ) ),
 								)
 							);
 

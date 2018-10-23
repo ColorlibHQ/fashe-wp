@@ -21,7 +21,7 @@
 				$currentPageId = get_the_ID();
 
 				// Page layout from
-				$layoutfrom  = get_post_meta( $currentPageId, '_fashe_page_layout_from', true );
+				$layoutfrom  = get_post_meta( absint( $currentPageId ), '_fashe_page_layout_from', true );
 
 				// Global header style
 				$homeStyle = fashe_global_header_opt();
@@ -29,12 +29,12 @@
 				// Page style
 				if( $layoutfrom && $layoutfrom == 'pagemeta' ){
 
-					$homeStyle  = get_post_meta( $currentPageId, '_fashe_page_style', true );
+					$homeStyle  = get_post_meta( absint( $currentPageId ), '_fashe_page_style', true );
 
 				}
 
 				// Page header show/hide
-				$pageheader = get_post_meta( $currentPageId, '_fashe_page_header', true );
+				$pageheader = get_post_meta( absint( $currentPageId ), '_fashe_page_header', true );
 															
 				get_template_part( 'templates/header', 'top'.esc_html( $homeStyle ) );
 
@@ -159,9 +159,9 @@
 			// Thumbnail Show
 			if( has_post_thumbnail() ){
 
-				$date_format = get_option('date_format');
-
 				if( !is_single() ){
+
+					$date_format = get_option('date_format');
 				
 					$html = '';
 
@@ -188,7 +188,6 @@
 				}
 				echo wp_kses_post( $html );
 				
-
 			}
 			// Thumbnail check and video and audio thumb show
 			if( !is_single() && !has_post_thumbnail() ){
@@ -264,8 +263,11 @@
 				
 				// Post category
 				$cats = get_the_category();
+
 				$categories = '';
+
 				$categories .= '<span class="post-cat">';
+
 				if( is_array( $cats ) && count( $cats ) > 0 ){
 					
 					foreach( $cats as $cat ){
@@ -296,7 +298,7 @@
 			<div class="p-b-12">
 				<?php 
 				// Post excerpt
-				echo fashe_excerpt_length( esc_html( fashe_opt('fashe_post_excerpt') ) );
+				echo fashe_excerpt_length( absint( fashe_opt('fashe_post_excerpt') ) );
 
 				// Link Pages
 				fashe_link_pages();

@@ -15,7 +15,7 @@ if( !defined( 'ABSPATH' ) ){
 // Post Item Start
 
 ?>
-<div id="<?php the_ID(); ?>" <?php post_class( 'item-blog-txt p-b-80' ); ?>>
+<div id="<?php the_ID(); ?>" <?php post_class( esc_attr( 'item-blog-txt p-b-80' ) ); ?>>
 	<?php 
 	/**
 	 * Blog Post thumbnail

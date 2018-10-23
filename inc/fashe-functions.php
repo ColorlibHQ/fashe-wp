@@ -26,13 +26,6 @@ function fashe_opt( $id = null, $default = '' ){
 	return $data;
 }
 
-// custom meta id callback
-function fashe_meta( $id = '' ){
-    
-    $value = get_post_meta( get_the_ID(), '_fashe_'.$id, true );
-    
-    return $value;
-}
 // Blog Date Permalink
 function fashe_blog_date_permalink(){
 	
@@ -68,6 +61,9 @@ if ( ! function_exists( 'fashe_excerpt_length' ) ) {
 		}
 		
 		$excerpt = '<p>'.preg_replace('`\[[^\]]*\]`','',$excerpt).'</p>';
+
+        $excerpt = wp_kses_post( $excerpt );
+
 		return $excerpt;
 
 	}
@@ -77,17 +73,28 @@ if ( ! function_exists( 'fashe_posted_comments' ) ) :
     function fashe_posted_comments(){
         
         $comments_num = get_comments_number();
+
         if( comments_open() ){
+
             if( $comments_num == 0 ){
-                $comments = esc_html__('No Comments','fashe');
+
+                $comments = __('No Comments','fashe');
+
             } elseif ( $comments_num > 1 ){
-                $comments= $comments_num . esc_html__(' Comments','fashe');
+
+                $comments = $comments_num . __(' Comments','fashe');
+
             } else {
-                $comments = esc_html__( '1 Comment','fashe' );
+
+                $comments = __( '1 Comment','fashe' );
             }
-            $comments = '<a href="' . esc_url( get_comments_link() ) . '">'. $comments .'</a>';
+
+            $comments = '<a href="' . esc_url( get_comments_link() ) . '">'. esc_html( $comments ) .'</a>';
+
         } else {
+
             $comments = esc_html__( 'Comments are closed', 'fashe' );
+
         }
         
         return $comments;
@@ -95,9 +102,12 @@ if ( ! function_exists( 'fashe_posted_comments' ) ) :
 endif;
 
 //audio format iframe match 
-function fashe_iframe_match(){   
+function fashe_iframe_match(){  
+
     $audio_content = fashe_embedded_media( array('audio', 'iframe') );
+
     $iframe_match = preg_match("/\iframe\b/i",$audio_content, $match);
+
     return $iframe_match;
 }
 
@@ -105,13 +115,17 @@ function fashe_iframe_match(){
 function fashe_embedded_media( $type = array() ){
     
     $content = do_shortcode( apply_filters( 'the_content', get_the_content() ) );
+
     $embed   = get_media_embedded_in_content( $content, $type );
         
     if( in_array( 'audio' , $type) ){
     
         if( count( $embed ) > 0 ){
+
             $output = str_replace( '?visual=true', '?visual=false', $embed[0] );
+
         }else{
+
            $output = '';
         }
         
@@ -120,8 +134,11 @@ function fashe_embedded_media( $type = array() ){
         if( count( $embed ) > 0 ){
 
             $output = $embed[0];
+
         }else{
+
            $output = ''; 
+
         }
         
     }
@@ -146,18 +163,24 @@ function fashe_link_pages(){
 function fashe_theme_logo( $class = '' ) {
 
     $siteUrl = home_url('/');
+
     // site logo
 		
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$imageUrl = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+	$imageUrl = wp_get_attachment_image_src( absint( $custom_logo_id ) , 'full' );
 	
 	if( !empty( $imageUrl[0] ) ){
+
 		$siteLogo = '<a class="'.esc_attr( $class ).'" href="'.esc_url( $siteUrl ).'"><img src="'.esc_url( $imageUrl[0] ).'" alt="'.esc_attr( fashe_image_alt( $imageUrl[0] ) ).'"></a>';
+
 	}else{
+
 		$siteLogo = '<h2><a class="'.esc_attr( $class ).'" href="'.esc_url( $siteUrl ).'">'.esc_html( get_bloginfo('name') ).'</a></h2>';
+
 	}
 	
-	return wp_kses_post( $siteLogo );
+	return $siteLogo;
 	
 }
 
@@ -165,8 +188,11 @@ function fashe_theme_logo( $class = '' ) {
 function fashe_pull_right( $id = '', $condation ){
     
     if( $id == $condation ){
+
         return ' '.'order-last';
+
     }else{
+
         return;
     }
     
@@ -179,11 +205,14 @@ function fashe_image_alt( $url = '' ){
         // attachment id by url 
         $attachmentid = attachment_url_to_postid( esc_url( $url ) );
        // attachment alt tag 
-        $image_alt = get_post_meta( esc_html( $attachmentid ) , '_wp_attachment_image_alt', true );
+        $image_alt = get_post_meta( absint( $attachmentid ) , '_wp_attachment_image_alt', true );
         
         if( $image_alt ){
+
             return $image_alt ;
+
         }else{
+
             $filename = pathinfo( esc_url( $url ) );
     
             $alt = str_replace( '-', ' ', $filename['filename'] );
@@ -192,6 +221,7 @@ function fashe_image_alt( $url = '' ){
         }
    
     }else{
+
        return; 
     }
 
@@ -210,47 +240,15 @@ function fashe_get_textareahtml_output( $content ) {
 	return $content;
 }
 
-// 
-
-// Slider list ( Shortcode ) select Options
-function fashe_get_slider_shortcode_options( $field ) {
-    $args = $field->args( 'get_post_type' );
-	
-	
-    $args = is_array( $args ) ? $args : array();
-
-    $args = wp_parse_args( $args, array( 'post_type' => 'post' ) );
-
-    $postType = $args['post_type'];
-
-	//
-
-	$args = array(
-		'post_type'        => $postType,
-		'post_status'      => 'publish',
-	);
-
-	$posts_array = get_posts( $args );	
-
-	// Initate an empty array
-	$term_options = array();
-		
-		foreach( $posts_array as $post ){
-			
-			$term_options[ $post->post_name ] = $post->post_title;
-			
-		}
-	
-    return $term_options;
-
-}
 
 // html Style tag for background image use in fashe companion plugin
 function fashe_inline_bg_img( $bgUrl ){
     $bg = '';
 
     if( $bgUrl ){
+
         $bg = 'style="background-image:url('.esc_url( $bgUrl ).')"'; 
+
     }
 
     return $bg;
@@ -260,37 +258,52 @@ function fashe_inline_bg_img( $bgUrl ){
 function fashe_sidebar_opt(){
 
     $sidebarOpt = fashe_opt( 'fashe-sidebarlayouts-settings' );
+
     $sidebar = '1';
+
     // Blog Sidebar layout  opt
     if( is_array( $sidebarOpt ) ){
+
         $sidebarOpt =  $sidebarOpt;
+
     }else{
+
         $sidebarOpt =  json_decode( $sidebarOpt, true );
+
     }
-    
-    
+        
     if( !empty( $sidebarOpt['columnsCount'] ) ){
+
         $sidebar = $sidebarOpt['columnsCount'];
     }
 
 
     return $sidebar;
 }
+
 //  customize sidebar option value return
 function fashe_global_header_opt(){
 
     $sidebarOpt = fashe_opt( 'fashe-header-layout' );
+
     $sidebar = '1';
+
     // Blog Sidebar layout  opt
     if( is_array( $sidebarOpt ) ){
+
         $sidebarOpt =  $sidebarOpt;
+
     }else{
+
         $sidebarOpt =  json_decode( $sidebarOpt, true );
+
     }
     
     
     if( !empty( $sidebarOpt['columnsCount'] ) ){
+
         $sidebar = $sidebarOpt['columnsCount'];
+
     }
 
 

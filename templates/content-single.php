@@ -13,7 +13,7 @@ if( !defined( 'ABSPATH' ) ){
 
 ?>
 <!-- Post Item Start -->
-<div id="<?php the_ID(); ?>" <?php post_class('content--area p-b-40'); ?>>
+<div id="<?php the_ID(); ?>" <?php post_class( esc_attr( 'content--area p-b-40' ) ); ?>>
 
 	<?php 
 		/**
