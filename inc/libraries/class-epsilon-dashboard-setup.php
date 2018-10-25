@@ -368,6 +368,15 @@ class Epsilon_Dashboard_Setup {
 					),
 				),
 			),
+			array(
+				'id'          => 'fashe-check-demoimport',
+				'title'       => __( 'To import demo data go to Appearance > Import Demo Data', 'fashe' ),
+				'description' => __( 'Before import demo data make sure your install one click demo import plugin.', 'fashe' ),
+				'plugin_slug' => '',
+				'state'       => false,
+				'check'       => !empty( get_option( 'fashe_demodata_import' ) ) ? true : false,
+				'actions'     => array(),
+			),
 		);
 	}
 
