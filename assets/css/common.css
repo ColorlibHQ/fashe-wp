@@ -41,7 +41,6 @@
 .woocommerce .woocommerce-cart-form button.button:hover, 
 .woocommerce .woocommerce-cart-form input.button:hover,
 .woocommerce-MyAccount-navigation-link a:hover,
-.promo-bar.bg0,
 .bg0-hov:hover {
     background-color: #e65540;
 }
@@ -58,9 +57,12 @@ a:hover,
 .tag-item:hover{
     border-color: #e65540;
 }
+.promo-bar.bg0,
 .topbar {
     background-color: #f5f5f5;
 }
+.promo-bar.bg0,
+.promo-bar.bg0 a,
 .topbar-social-item,
 .topbar-email,
 .topbar-child1{
