@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="64cb2e53-6c8e-49dd-abea-1e19de1e9721" name="wpdev" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="$USER_HOME$/Local Sites/wpdev/app/public" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
