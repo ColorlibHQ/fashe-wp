@@ -482,40 +482,7 @@ class Epsilon_Dashboard_Setup {
 				'title'  => esc_html__( 'Recommended Plugins', 'fashe' ),
 				'hidden' => $this->theme['theme-slug'] . '_recommended_plugins',
 				'type'   => 'plugins',
-			),
-			array(
-				'id'      => 'epsilon-privacy',
-				'title'   => esc_html__( 'Privacy', 'fashe' ),
-				'type'    => 'option-page',
-				'hidden'  => false,
-				'content' => array(
-					'title'      => esc_html__( 'We believe in a better and streamlined user experiences', 'fashe' ),
-					'paragraphs' => array(
-						esc_html__( 'And as such, we\'ve made it easy for you - our user, to disable all of our theme upsells & recommendations.', 'fashe' ),
-						esc_html__( 'Mind you that we use these as a way to facilitate compatible product discovery - as in: plugins that enhance the
-		user experience with any of our products. But, in the end, the user should always have a say in it.', 'fashe' ),
-						wp_kses_post( __( 'By turning any or all of the toggles below to the <span style="color: green;">ON</span> position you\'ll be able
-		to hide all upsells & recommended plugin discovery sections & actions.', 'fashe' ) ),
-						wp_kses_post( __( '<u>We really hope</u> you\'ll enjoy using our products as much as we\'ve enjoyed building them.', 'fashe' ) ),
-					),
-				),
-				'fields'  => array(
-					array(
-						'id'      => $this->theme['theme-slug'] . '_recommended_actions',
-						'type'    => 'epsilon-toggle',
-						'value'   => true,
-						'label'   => esc_html__( 'Hide Customizer Recommended Actions', 'fashe' ),
-						'checked' => get_option( $this->theme['theme-slug'] . '_recommended_actions', false ),
-					),
-					array(
-						'id'      => $this->theme['theme-slug'] . '_recommended_plugins',
-						'type'    => 'epsilon-toggle',
-						'value'   => true,
-						'label'   => esc_html__( 'Hide Customizer Recommended Plugins', 'fashe' ),
-						'checked' => get_option( $this->theme['theme-slug'] . '_recommended_plugins', false ),
-					)
-				),
-			),
+			)
 		);
 	}
 
