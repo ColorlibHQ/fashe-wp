@@ -1,36 +1,52 @@
 === Fashe ===
-Contributors: Colorlib
-Requires at least: WordPress 4.9
-Tested : WordPress 4.9
-Version: 1.3
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, left-sidebar, right-sidebar, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, theme-options, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
-Text Domain: fashe
+Contributors:       colorlib
+Tags:               custom-header, custom-menu, featured-image-header, featured-images, full-width-template, translation-ready
+Requires at least:  4.0
+Tested up to:       4.4.2
 
 == Description ==
-fashe is a Multipurpose Technology, Hosting Business with WHMCS WordPress Theme designed for All kinds of Technology, Domain and Hosting Business. Anyone can easily update/edit this Theme to follow our Well Sorted Documentation.
-
-* Mobile-first, Responsive Layout
-* Custom Colors
-* Custom Header
-* Social Links
-* Menu Description
-* Post Formats
-* The GPL v2.0 or later license. :) Use it to make something cool.
-
-== Installation == 
-
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in fashe in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-5. Navigate to Appearance > Customize in your admin panel and customize to taste.
-
-== Copyright ==
-gpu
+Fashe is a clean, simple, responsive and customizable WordPress theme that looks awesome on any device. For a quick launch of a page to showcases your works, your talents and your services, apredefined theme is a wise decision to make. Fashe has it all in store for you to easily and effortlessly engineer an appealing page to attract new clients and seal new business deals.
 
 
-http://Colorlib.us/demo/fashe/wordpress/
+= License =
+Fashe WordPress theme, Copyright (C) 2018 Colorlib.com
+Fashe WordPress theme is licensed under the GPL2.
+
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.
+The exceptions to this license are as follows:
+
+Images:
+    - theme screenshot: custom work created by Colorlib.com and released under GPLv2
+
+* Bootstrap v4.0.0 (http://getbootstrap.com)
+    Copyright 2011-2018 Twitter, Inc.
+    Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+* Animate Css v3.5.2 ( http://daneden.me/animate )
+    Copyright (c) 2017 Daniel Eden.
+    Licensed under MIT ( http://opensource.org/licenses/MIT )
+
+* Ionicons v2.0.0 ( http://ionicons.com/ )
+    Copyright (c) 2015-present
+    Licensed under MIT ( https://github.com/ionic-team/ionicons/blob/master/LICENSE )
+
+* Animsition v4.0.2 (http://blivesta.github.io/animsition)
+    Licensed under MIT ( https://github.com/blivesta/animsition/blob/master/LICENSE.md )
+
+ * Font Awesome
+    License: SIL OFL 1.1
+    URL: http://scripts.sil.org/OFL
+
+ * Google Fonts:
+    License: SIL OFL 1.1
+    URL: http://scripts.sil.org/OFL
+
+* PopperJS (https://github.com/FezVrasta/popper.js)
+    Copyright © 2016-2018 Federico Zivolo
+    License: MIT
+    URL: https://github.com/FezVrasta/popper.js/blob/master/LICENSE.md
 
 
-
+* Select2 v4.0.3 (https://github.com/select2/select2/blob/master/LICENSE.md)
+    Copyright (c) 2012-2017
+    License: MIT
