@@ -248,9 +248,16 @@
 						'in_footer' 	=> true
 					),
 					array(
+						'handler'		=> 'fashe-woo-custom',
+						'file' 			=> $jsPath.'woo-custom.js',
+						'dependency' 	=> array( 'jquery', 'jquery-slick' ),
+						'version' 		=> $this->fashe_version,
+						'in_footer' 	=> true
+					),
+					array(
 						'handler'		=> 'fashe-main',
 						'file' 			=> $jsPath.'main.js',
-						'dependency' 	=> array( 'jquery', 'jquery-slick' ),
+						'dependency' 	=> array( 'jquery' ),
 						'version' 		=> $this->fashe_version,
 						'in_footer' 	=> true
 					),

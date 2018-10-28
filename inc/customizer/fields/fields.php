@@ -336,7 +336,7 @@ Epsilon_Customizer::add_field(
         'label'       => esc_html__( 'Shop Title Show/Hide', 'fashe' ),
         'description' => esc_html__( 'Toggle the shop page title show or hide.', 'fashe' ),
         'section'     => 'fashe_woocommerce_options_section',
-        'default'     => true,
+        'default'     => false,
     )
 );
 
@@ -375,7 +375,7 @@ Epsilon_Customizer::add_field(
         'label'       => esc_html__( 'Related Product Show/Hide', 'fashe' ),
         'description' => esc_html__( 'Toggle the related product show or hide in product details page.', 'fashe' ),
         'section'     => 'fashe_woocommerce_options_section',
-        'default'     => true,
+        'default'     => false,
     )
 );
 // Related Product number field
