@@ -3118,7 +3118,10 @@ li.next {
 .footer--widget table#wp-calendar{
   width: 100%;
 }
-
+.footer--widget.widget_text p {
+  font-size: 13px;
+  line-height: 1.8;
+}
 .widget ul li {
 	border-top: 1px solid #e6e6e6;
 	padding: 8px 0px;
