@@ -27,22 +27,12 @@ $images = fashe_opt( 'fashe-footer-payment-settings' );
 	}
 
 	// Copy right text
-	$copyText = sprintf( __( 'Copyright &copy; %s All rights reserved. | This template is made with', 'fashe' ), date('Y') );
-	
-	$by = esc_html__( 'by', 'fashe' );
-	
-	$setCopyright = fashe_opt('fashe-copyright-text-settings');
-	
-	if( $setCopyright ){
-		$copyText = $setCopyright;
-	}
-		
-	$copyRightText = sprintf( ' %s <i class="fa fa-heart-o" aria-hidden="true"></i> %s <a href="%s" target="_blank">Colorlib</a>', $copyText, $by, 'https://colorlib.com' );
-	
+	$copyText = sprintf( __( 'Copyright &copy; %s All rights reserved.', 'fashe' ), date('Y') );
+			
 	?>
 	<div class="t-center footer-copy-right-text s-text8 p-t-20">
 		<?php 
-		echo wp_kses_post( $copyRightText );
+		echo wp_kses_post( fashe_opt('fashe-copyright-text-settings', $copyText ) );
 		?>
 	</div>
 </div>
