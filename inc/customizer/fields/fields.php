@@ -138,7 +138,7 @@ Epsilon_Customizer::add_field(
         'label'       => esc_html__( 'Header Social Show/Hide', 'fashe' ),
         'description' => esc_html__( 'Toggle the header top social active. Before toggle make sure you have create social menu from Appearance > menus.', 'fashe' ),
         'section'     => 'fashe_headertop_options_section',
-        'default'     => false,
+        'default'     => true,
     )
 );
 
@@ -506,7 +506,7 @@ Epsilon_Customizer::add_field(
         'type'        => 'epsilon-text-editor',
         'label'       => esc_html__( 'Footer copyright text', 'fashe' ),
         'section'     => 'fashe_footer_options_section',
-        'default'     => '',
+        'default'     => sprintf( __( 'Copyright &copy; %s All rights reserved.', 'fashe' ), date('Y') ),
     )
 );
 // Footer widget background color field
