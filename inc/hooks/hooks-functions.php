@@ -60,7 +60,7 @@
 			if( !is_404() ){
 				echo '<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">';
 				// Footer widget
-				if( fashe_opt( 'fashe-widget-toggle-settings' ) ){
+				if( fashe_opt( 'fashe-widget-toggle-settings', true ) ){
 					get_template_part( 'templates/footer', 'widgets' );
 				}
 				
