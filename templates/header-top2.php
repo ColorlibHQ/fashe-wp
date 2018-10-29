@@ -82,7 +82,7 @@ endif;
 		<div class="topbar2">
 			<?php 
 			// Social Media
-			if( fashe_opt('fashe-headersocial-toggle-settings') ){
+			if( fashe_opt('fashe-headersocial-toggle-settings', true ) ){
 				if( has_nav_menu('social-menu') ){	
 					$args = array(
 						'theme_location' => 'social-menu',

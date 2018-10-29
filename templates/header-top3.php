@@ -52,7 +52,7 @@
 
 		<div class="bottombar flex-col-c p-b-65">
 			<?php 
-			$socialMenu = fashe_opt('fashe-headersocial-toggle-settings');
+			$socialMenu = fashe_opt('fashe-headersocial-toggle-settings', true );
 			// Social Media
 			if( $socialMenu ){
 				if( has_nav_menu('social-menu') ){
