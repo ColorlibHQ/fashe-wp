@@ -1289,6 +1289,9 @@ li.sale-noti > a {
   position: unset;
 }
 
+.container-menu-header-v3 .header-icons3 .header-wrapicon2 {
+  margin: 0 auto;
+}
 /*[ Header cart ]
 -----------------------------------------------------------
 */
