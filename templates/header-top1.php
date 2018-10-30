@@ -70,7 +70,7 @@
 			<?php 
 			// Header login Icon
 			$loginUrl = fashe_opt( 'fashe_login_url' );
-			$cart = fashe_opt( 'fashe-cart-toggle-settings', true );
+			$cart = fashe_opt( 'fashe-cart-toggle-settings' );
 			
 			if( $loginUrl ):
 			?>
