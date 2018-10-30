@@ -1,6 +1,6 @@
-<?php 
+<?php
 // Block direct access
-if( !defined( 'ABSPATH' ) ){
+if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct script access denied.' );
 }
 /**
@@ -16,27 +16,27 @@ if( !defined( 'ABSPATH' ) ){
 
 ?>
 <div id="<?php the_ID(); ?>" <?php post_class( esc_attr( 'item-blog-txt p-b-80' ) ); ?>>
-	<?php 
+	<?php
 	/**
 	 * Blog Post thumbnail
 	 * @Hook  fashe_blog_posts_thumb
 	 *
 	 * @Hooked fashe_blog_posts_thumb_cb
-	 * 
+	 *
 	 *
 	 */
 	do_action( 'fashe_blog_posts_thumb' );
 
 	?>
 	<div class="post--summery bg-color--alabaster">
-		<?php 
+		<?php
 
 		/**
 		 * Blog Post title
 		 * @Hook  fashe_blog_posts_title
 		 *
 		 * @Hooked fashe_blog_posts_title_cb
-		 * 
+		 *
 		 *
 		 */
 		do_action( 'fashe_blog_posts_title' );
@@ -46,7 +46,7 @@ if( !defined( 'ABSPATH' ) ){
 		 * @Hook  fashe_blog_posts_meta
 		 *
 		 * @Hooked fashe_blog_posts_meta_cb
-		 * 
+		 *
 		 *
 		 */
 		do_action( 'fashe_blog_posts_meta' );
@@ -56,7 +56,7 @@ if( !defined( 'ABSPATH' ) ){
 		 * @Hook  fashe_blog_posts_excerpt
 		 *
 		 * @Hooked fashe_blog_posts_excerpt_cb
-		 * 
+		 *
 		 *
 		 */
 		do_action( 'fashe_blog_posts_excerpt' );

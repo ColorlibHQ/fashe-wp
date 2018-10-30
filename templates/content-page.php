@@ -1,6 +1,6 @@
-<?php 
+<?php
 // Block direct access
-if( !defined( 'ABSPATH' ) ){
+if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct script access denied.' );
 }
 /**
@@ -12,21 +12,21 @@ if( !defined( 'ABSPATH' ) ){
  */
 
 $contentclass = '';
-if( !fashe_is_cca_page() ){
+if ( ! fashe_is_cca_page() ) {
 	$contentclass = 'content--area';
 }
 
 ?>
 <div id="page_<?php the_ID(); ?>" <?php post_class( esc_attr( $contentclass ) ); ?>>
-	<?php 
+	<?php
 
 	/**
-	 * page content 
+	 * page content
 	 * Comments Template
 	 * @Hook  fashe_page_content
 	 *
 	 * @Hooked fashe_page_content_cb
-	 * 
+	 *
 	 *
 	 */
 	do_action( 'fashe_page_content' );
