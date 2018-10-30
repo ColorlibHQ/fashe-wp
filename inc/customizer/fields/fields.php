@@ -13,6 +13,7 @@
  * General Section Fields
  ***********************************/
 
+
 // Go to top Button option field
 Epsilon_Customizer::add_field(
     'fashe-gototop-toggle-settings',
@@ -20,13 +21,10 @@ Epsilon_Customizer::add_field(
         'type'        => 'epsilon-toggle',
         'label'       => esc_html__( 'Go To Top Button', 'fashe' ),
         'description' => esc_html__( 'Toggle the display of the go to top button.', 'fashe' ),
-        'transport'   => 'postMessage',
         'section'     => 'fashe_general_options_section',
         'default'     => true,
     )
 );
-
-
 // Cart button option field
 if( defined( 'WC_PLUGIN_FILE' ) ){
     Epsilon_Customizer::add_field(
@@ -35,9 +33,8 @@ if( defined( 'WC_PLUGIN_FILE' ) ){
             'type'        => 'epsilon-toggle',
             'label'       => esc_html__( 'Header Cart Button', 'fashe' ),
             'description' => esc_html__( 'Toggle the display of the header cart button.', 'fashe' ),
-            'transport'   => 'postMessage',
             'section'     => 'fashe_general_options_section',
-            'default'     => true,
+            'default'     => false,
         )
     );
 }

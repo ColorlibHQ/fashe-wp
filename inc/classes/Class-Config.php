@@ -82,9 +82,6 @@
 	        
 	        // support logo
 	        add_theme_support( 'custom-logo' );
-
-	        // support custom background
-			add_theme_support( 'custom-background' );
 	        
 	        //  support post format
 	        add_theme_support( 'post-formats', array( 'video','audio' ) );
