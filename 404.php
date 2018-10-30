@@ -1,29 +1,29 @@
-<?php 
+<?php
 // Block direct access
-if( !defined( 'ABSPATH' ) ){
+if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct script access denied.' );
 }
 /**
- * @Packge 	   : Fashe
+ * @Packge     : Fashe
  * @Version    : 1.0
- * @Author 	   : Colorlib
+ * @Author     : Colorlib
  * @Author URI : http://colorlib.com/wp/
  *
  */
- 
 
-	//  Call Header
-	get_header();
 
-	/**
-	 * 404 page
-	 * @Hook fashe_fof
-	 * @Hooked fashe_fof_cb
-	 *
-	 */
+//  Call Header
+get_header();
 
-	do_action( 'fashe_fof' );
+/**
+ * 404 page
+ * @Hook fashe_fof
+ * @Hooked fashe_fof_cb
+ *
+ */
 
-	 // Call Footer
-	 get_footer();
-?>
+do_action( 'fashe_fof' );
+
+// Call Footer
+get_footer();
+
