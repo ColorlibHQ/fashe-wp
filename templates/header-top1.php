@@ -1,65 +1,65 @@
 <header class="header1">
 <div class="container-menu-header">
 	<div class="topbar">
-		<?php 
+		<?php
 		// Social Media
-		if( fashe_opt('fashe-headersocial-toggle-settings', true) ){
-			if( has_nav_menu('social-menu') ){	
+		if ( fashe_opt( 'fashe-headersocial-toggle-settings', true ) ) {
+			if ( has_nav_menu( 'social-menu' ) ) {
 				$args = array(
 					'theme_location' => 'social-menu',
-					'container' => '',
+					'container'      => '',
 					'menu_class'     => 'topbar-social',
 					'depth'          => 1,
 					'fallback_cb'    => 'fashe_social_navwalker::fallback',
-					'walker'    	 => new fashe_social_navwalker(),
-				);  
+					'walker'         => new fashe_social_navwalker(),
+				);
 				wp_nav_menu( $args );
 			}
 		}
 		// Header Top Text
-		$text = fashe_opt('fashe_header_top_text', __( 'Free shipping for standard order over $100', 'fashe' ) );
-		if( $text ){
-			echo '<span class="topbar-child1">'.esc_html( $text ).'</span>';
+		$text = fashe_opt( 'fashe_header_top_text', __( 'Free shipping for standard order over $100', 'fashe' ) );
+		if ( $text ) {
+			echo '<span class="topbar-child1">' . esc_html( $text ) . '</span>';
 		}
-		
+
 		?>
 		<div class="topbar-child2">
-			<?php 
+			<?php
 			// Email
 			$email = fashe_opt( 'fashe_header_top_email', 'fashe@example.com' );
-			if( $email ){
-				echo '<span class="topbar-email">'.esc_html( $email ).'</span>';
+			if ( $email ) {
+				echo '<span class="topbar-email">' . esc_html( $email ) . '</span>';
 			}
 			//  Header Translate
-			$headerTranslate = fashe_opt('fashe-headerTranslate-toggle-settings');
-			if( $headerTranslate ):
-			?>
-			<div id="weglot_here"></div> 
-			<?php 
+			$header_translate = fashe_opt( 'fashe-headerTranslate-toggle-settings' );
+			if ( $header_translate ) :
+				?>
+			<div id="weglot_here"></div>
+				<?php
 			endif;
 			?>
 		</div>
 	</div>
 
 	<div class="wrap_header">
-		<?php 
+		<?php
 		// Header Logo
-		echo fashe_theme_logo('logo');
+		echo fashe_theme_logo( 'logo' );
 		?>
 
 		<!-- Menu -->
 		<div class="wrap_menu">
 			<nav class="menu">
-			<?php 
-			if( has_nav_menu( 'primary-menu' ) ){
+			<?php
+			if ( has_nav_menu( 'primary-menu' ) ) {
 				$args = array(
 					'theme_location' => 'primary-menu',
-					'container' => '',
+					'container'      => '',
 					'depth'          => 2,
 					'menu_class'     => 'main_menu',
 					'fallback_cb'    => 'fashe_bootstrap_navwalker::fallback',
-					'walker'    	 => new fashe_bootstrap_navwalker(),
-				);  
+					'walker'         => new fashe_bootstrap_navwalker(),
+				);
 				wp_nav_menu( $args );
 			}
 			?>
@@ -67,23 +67,23 @@
 		</div>
 
 		<div class="header-icons">
-			<?php 
+			<?php
 			// Header login Icon
-			$loginUrl = fashe_opt( 'fashe_login_url' );
-			$cart = fashe_opt( 'fashe-cart-toggle-settings', true );
-			
-			if( $loginUrl ):
-			?>
-			<a href="<?php echo esc_url( $loginUrl ); ?>" class="header-wrapicon1 dis-block">
+			$login_url = fashe_opt( 'fashe_login_url' );
+			$cart     = fashe_opt( 'fashe-cart-toggle-settings' );
+
+			if ( $login_url ) :
+				?>
+			<a href="<?php echo esc_url( $login_url ); ?>" class="header-wrapicon1 dis-block">
 				<img src="<?php echo esc_url( FASHE_DIR_ASSETS_URI ); ?>img/icons/icon-header-01.png" class="header-icon1" alt="<?php esc_html_e( 'ICON', 'fashe' ); ?>">
 			</a>
-			<?php 
+				<?php
 			endif;
-			if( $cart && $loginUrl ){
+			if ( $cart && $login_url ) {
 				echo '<span class="linedivide1"></span>';
 			}
 			// Cart
-			if( $cart ){
+			if ( $cart ) {
 				fashe_cart_count();
 			}
 			?>
@@ -93,29 +93,29 @@
 
 <!-- Header Mobile -->
 <div class="wrap_header_mobile">
-	<?php 
+	<?php
 	// Logo moblie
-	echo fashe_theme_logo('logo-mobile');
+	echo fashe_theme_logo( 'logo-mobile' );
 	?>
 
 	<!-- Button show menu -->
 	<div class="btn-show-menu">
 		<!-- Header Icon mobile -->
 		<div class="header-icons-mobile">
-			<?php 
-			if( $loginUrl ):
-			?>
+			<?php
+			if ( $login_url ) :
+				?>
 			<a href="#" class="header-wrapicon1 dis-block">
 				<img src="<?php echo esc_url( FASHE_DIR_ASSETS_URI ); ?>img/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 			</a>
-			<?php 
+				<?php
 			endif;
 			// Divider
-			if( $cart && $loginUrl ){
+			if ( $cart && $login_url ) {
 				echo '<span class="linedivide2"></span>';
 			}
 			// Cart Icon
-			if( $cart ){
+			if ( $cart ) {
 				fashe_cart_count();
 			}
 			?>
@@ -133,68 +133,68 @@
 <div class="wrap-side-menu" >
 	<nav class="side-menu">
 		<ul class="main-menu">
-			<?php 
-			if( $text ):
-			?>
+			<?php
+			if ( $text ) :
+				?>
 			<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 				<span class="topbar-child1">
 					<?php echo esc_html( $text ); ?>
 				</span>
 			</li>
-			<?php 
+				<?php
 			endif;
-			
+
 			//Header Translate and  Email
-			if( $email || $headerTranslate ):
-			?>
+			if ( $email || $header_translate ) :
+				?>
 			<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
 				<div class="topbar-child2-mobile">
-					<?php 
+					<?php
 					// Mobile Menu Email
-					if( $email ){
-						echo '<span class="topbar-email">'.esc_html( $email ).'</span>';
+					if ( $email ) {
+						echo '<span class="topbar-email">' . esc_html( $email ) . '</span>';
 					}
 					// Header Translate
-					if( $headerTranslate ):
-					?>
-					<div id="weglot_here"></div> 
-					<?php 
+					if ( $header_translate ) :
+						?>
+					<div id="weglot_here"></div>
+						<?php
 					endif;
 					?>
 				</div>
 			</li>
-			<?php 
+				<?php
 			endif;
 			// Mobile social menu
-			if( fashe_opt('fashe-headersocial-toggle-settings') ){
-				if( has_nav_menu('social-menu') ){	
-				
+			if ( fashe_opt( 'fashe-headersocial-toggle-settings' ) ) {
+				if ( has_nav_menu( 'social-menu' ) ) {
+
 					$args = array(
 						'theme_location' => 'social-menu',
-						'container' => '',
+						'container'      => '',
 						'depth'          => 1,
 						'menu_class'     => 'topbar-social-mobile',
 						'fallback_cb'    => 'fashe_social_navwalker::fallback',
-						'walker'    	 => new fashe_social_navwalker(),
-					);  
+						'walker'         => new fashe_social_navwalker(),
+					);
 					echo '<li class="item-topbar-mobile p-l-10">';
 					wp_nav_menu( $args );
 					echo '</li>';
 				}
 			}
-			
+
 			?>
 		</ul>
 		<?php
-		if( has_nav_menu('primary-menu') ){
+		if ( has_nav_menu( 'primary-menu' ) ) {
 			$args = array(
 				'theme_location' => 'primary-menu',
-				'container'		 => '',
+				'container'      => '',
 				'depth'          => 2,
 				'menu_class'     => 'main-menu mobile-main-menu',
 				'fallback_cb'    => 'fashe_mobile_bootstrap_navwalker::fallback',
-				'walker'    	 => new fashe_mobile_bootstrap_navwalker(),
-			);  
+				'walker'         => new fashe_mobile_bootstrap_navwalker(),
+			);
 			wp_nav_menu( $args );
 		}
 		?>

@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	https://docs.woocommerce.com/document/template-structure/
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 2.4.0
@@ -30,15 +30,15 @@ $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $tabs ) ) : ?>
 
-	<?php 
+	<?php
 	$i = 0;
-	foreach ( $tabs as $key => $tab ) : 
-	$active = ' bo7';
-	if( $i == 0 ){
-		$active = ' active-dropdown-content bo6';
-	}
-	
-	?>
+	foreach ( $tabs as $key => $tab ) :
+		$active = ' bo7';
+		if ( $i == 0 ) {
+			$active = ' active-dropdown-content bo6';
+		}
+
+		?>
 	<div class="wrap-dropdown-content p-t-15 p-b-14<?php echo esc_attr( $active ); ?>">
 		<h5 class="<?php echo esc_attr( $key ); ?>_tab js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4" id="dropdown-title-<?php echo esc_attr( $key ); ?>">
 			<?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ); ?>
@@ -47,15 +47,18 @@ if ( ! empty( $tabs ) ) : ?>
 		</h5>
 
 		<div class="dropdown-content dis-none p-t-15 p-b-23" id="dropdown-<?php echo esc_attr( $key ); ?>">
-			
-			<?php if ( isset( $tab['callback'] ) ) { call_user_func( $tab['callback'], $key, $tab ); } ?>
-			
+
+			<?php
+			if ( isset( $tab['callback'] ) ) {
+				call_user_func( $tab['callback'], $key, $tab ); }
+			?>
+
 		</div>
 	</div>
-	<?php 
-	$i++;
-	endforeach; 
+		<?php
+		$i++;
+	endforeach;
 	?>
-	
+
 
 <?php endif; ?>

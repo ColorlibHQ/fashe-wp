@@ -5,15 +5,15 @@
     wp.customize( 'fashe-gototop-toggle-settings', function( value ) {
         value.bind( function( toggle ) {
 
-            
+            var $backToTop = $( '.btn-back-to-top' );
 
-            if( true == toggle ){
+            if( true == toggle ) {
 
-                $( '.btn-back-to-top' ).show();
+                $backToTop.show();
 
-            }else{
+            } else {
 
-                $( '.btn-back-to-top' ).hide();
+                $backToTop.hide();
 
             }
             
@@ -25,17 +25,80 @@
     wp.customize( 'fashe-cart-toggle-settings', function( value ) {
         value.bind( function( newval ) {
 
-            if( newval == true ){
+            var $header = $( '.header-wrapicon2' );
 
-                $( '.header-wrapicon2' ).show();
+            if( newval == true ) {
 
-            }else{
+                $header.show();
 
-                $( '.header-wrapicon2' ).hide();
+            } else {
+
+                $header.hide();
+
+            }
+            
+
+        } );
+    } );
+
+    // Update shop title real time...
+    wp.customize( 'fashe-woo-shoppage-title-settings', function( value ) {
+        value.bind( function( newval ) {
+
+            var $pageTitle = $( '.page-title' );
+
+            if( newval == true ) {
+
+                $pageTitle.show();
+
+            } else {
+
+                $pageTitle.hide();
 
             }
             
         } );
+
+    } );
+
+    // Update widget real time...
+    wp.customize( 'fashe-widget-toggle-settings', function( value ) {
+        value.bind( function( newval ) {
+
+            var $widgets = $( 'footer .flex-w.p-b-40' );
+
+            if( newval == true ) {
+
+                $widgets.show();
+
+            } else {
+
+                $widgets.hide();
+
+            }
+            
+        } );
+
+    } );
+
+    // Update related product section real time...
+    wp.customize( 'fashe-woo-related-product-settings', function( value ) {
+        value.bind( function( newval ) {
+
+            var $widgets = $( '.relateproduct' );
+
+            if( newval == true ) {
+
+                $widgets.show();
+
+            } else {
+
+                $widgets.hide();
+
+            }
+            
+        } );
+
     } );
 
 

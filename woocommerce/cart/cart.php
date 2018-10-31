@@ -26,12 +26,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 		<thead>
 			<tr>
-                <th class="product-thumbnail">&nbsp;</th>
-                <th class="product-name"><?php esc_html_e( 'Product', 'fashe' ); ?></th>
-                <th class="product-price"><?php esc_html_e( 'Price', 'fashe' ); ?></th>
-                <th class="product-quantity"><?php esc_html_e( 'Quantity', 'fashe' ); ?></th>
-                <th class="product-subtotal"><?php esc_html_e( 'Total', 'fashe' ); ?></th>
-                <th class="product-remove">&nbsp;</th>
+				<th class="product-thumbnail">&nbsp;</th>
+				<th class="product-name"><?php esc_html_e( 'Product', 'fashe' ); ?></th>
+				<th class="product-price"><?php esc_html_e( 'Price', 'fashe' ); ?></th>
+				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'fashe' ); ?></th>
+				<th class="product-subtotal"><?php esc_html_e( 'Total', 'fashe' ); ?></th>
+				<th class="product-remove">&nbsp;</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -80,9 +80,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</td>
 
 						<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'fashe' ); ?>">
-							<?php
-								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-							?>
+							<?php echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok. ?>
 						</td>
 
 						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'fashe' ); ?>">
@@ -90,13 +88,17 @@ do_action( 'woocommerce_before_cart' ); ?>
 						if ( $_product->is_sold_individually() ) {
 							$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 						} else {
-							$product_quantity = woocommerce_quantity_input( array(
-								'input_name'   => "cart[{$cart_item_key}][qty]",
-								'input_value'  => $cart_item['quantity'],
-								'max_value'    => $_product->get_max_purchase_quantity(),
-								'min_value'    => '0',
-								'product_name' => $_product->get_name(),
-							), $_product, false );
+							$product_quantity = woocommerce_quantity_input(
+								array(
+									'input_name'   => "cart[{$cart_item_key}][qty]",
+									'input_value'  => $cart_item['quantity'],
+									'max_value'    => $_product->get_max_purchase_quantity(),
+									'min_value'    => '0',
+									'product_name' => $_product->get_name(),
+								),
+								$_product,
+								false
+							);
 						}
 
 						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
@@ -104,9 +106,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</td>
 
 						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'fashe' ); ?>">
-							<?php
-								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-							?>
+							<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok. ?>
 						</td>
 						<td class="product-remove">
 							<?php
@@ -154,13 +154,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <div class="cart-collaterals">
 	<?php
-		/**
-		 * Cart collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-		do_action( 'woocommerce_cart_collaterals' );
+	/**
+	 * Cart collaterals hook.
+	 *
+	 * @hooked woocommerce_cross_sell_display
+	 * @hooked woocommerce_cart_totals - 10
+	 */
+	do_action( 'woocommerce_cart_collaterals' );
 	?>
 </div>
 
