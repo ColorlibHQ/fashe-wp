@@ -1,6 +1,6 @@
-<?php 
+<?php
 // Block direct access
-if( !defined( 'ABSPATH' ) ){
+if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'Direct script access denied.' );
 }
 /**
@@ -15,13 +15,13 @@ if( !defined( 'ABSPATH' ) ){
 <!-- Post Item Start -->
 <div id="<?php the_ID(); ?>" <?php post_class( esc_attr( 'content--area p-b-40' ) ); ?>>
 
-	<?php 
+	<?php
 		/**
 	 * Blog Post thumbnail
 	 * @Hook  fashe_blog_posts_thumb
 	 *
 	 * @Hooked fashe_blog_posts_thumb_cb
-	 * 
+	 *
 	 *
 	 */
 	do_action( 'fashe_blog_posts_thumb' );
@@ -31,19 +31,19 @@ if( !defined( 'ABSPATH' ) ){
 	 * @Hook  fashe_blog_posts_meta
 	 *
 	 * @Hooked fashe_blog_posts_meta_cb
-	 * 
+	 *
 	 *
 	 */
 	do_action( 'fashe_blog_posts_meta' );
 
 
 	/**
-	 * Blog single page content 
+	 * Blog single page content
 	 * Post social share
 	 * @Hook  fashe_blog_posts_content
 	 *
 	 * @Hooked fashe_blog_posts_content_cb
-	 * 
+	 *
 	 *
 	 */
 	do_action( 'fashe_blog_posts_content' );
@@ -53,20 +53,21 @@ if( !defined( 'ABSPATH' ) ){
 	 * Blog single post meta category, tag, next - previous link, comments form
 	 * and biography
 	 * @Hook  fashe_blog_single_meta
-	 * 
+	 *
 	 * @Hooked fashe_blog_single_meta_cb
-	 * 
+	 *
 	 *
 	 */
 	do_action( 'fashe_blog_single_meta' );
 
-?>   
-</div>   
-<?php 
-	
+	?>
+
+</div>
+<?php
+
 	// comment template.
-	if ( comments_open() || get_comments_number() ) {
-		comments_template();
-	}
-	
-?>              
+if ( comments_open() || get_comments_number() ) {
+	comments_template();
+}
+
+?>

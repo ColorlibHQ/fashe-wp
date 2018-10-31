@@ -19,8 +19,8 @@ class fashe_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @param int $depth Depth of page. Used for padding.
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
-		
-		$indent = str_repeat( "\t", $depth );
+
+		$indent  = str_repeat( "\t", $depth );
 		$output .= "\n$indent<ul role=\"menu\" class=\"sub_menu\">\n";
 	}
 
@@ -37,8 +37,6 @@ class fashe_bootstrap_navwalker extends Walker_Nav_Menu {
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-			
-		
 		/**
 		 * Dividers, Headers or Disabled
 		 * =============================
@@ -49,47 +47,48 @@ class fashe_bootstrap_navwalker extends Walker_Nav_Menu {
 		 */
 		if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) {
 			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if ( strcasecmp( $item->title, 'divider') == 0 && $depth === 1 ) {
+		} elseif ( strcasecmp( $item->title, 'divider' ) == 0 && $depth === 1 ) {
 			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
+		} elseif ( strcasecmp( $item->attr_title, 'dropdown-header' ) == 0 && $depth === 1 ) {
 			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
-		} else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
+		} elseif ( strcasecmp( $item->attr_title, 'disabled' ) == 0 ) {
 			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 		} else {
 
 			$class_names = $value = '';
 
-			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+			$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'menu-item-' . $item->ID;
 			$classes[] = 'depth-' . $depth;
-									
-							
-			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-			
-			if ( $args->has_children )
-				$class_names .= ' dropdown has-children';
 
-			if ( in_array( 'current-menu-item', $classes ) )
+			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+
+			if ( $args->has_children ) {
+				$class_names .= ' dropdown has-children';
+			}
+
+			if ( in_array( 'current-menu-item', $classes ) ) {
 				$class_names .= ' active';
+			}
 
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-			$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+			$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-			$output .= $indent . '<li' . $id . $value . $class_names .'>';
+			$output .= $indent . '<li' . $id . $value . $class_names . '>';
 
-			$atts = array();
-			$atts['title']  = ! empty( $item->title )	? $item->title	: '';
-			$atts['target'] = ! empty( $item->target )	? $item->target	: '';
-			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
+			$atts           = array();
+			$atts['title']  = ! empty( $item->title ) ? $item->title : '';
+			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
+			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
-				$atts['href']   		= '#';
-				$atts['data-toggle']	= '';
-				$atts['class']			= '';
-				$atts['aria-haspopup']	= 'true';
+				$atts['href']          = '#';
+				$atts['data-toggle']   = '';
+				$atts['class']         = '';
+				$atts['aria-haspopup'] = 'true';
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
@@ -99,14 +98,12 @@ class fashe_bootstrap_navwalker extends Walker_Nav_Menu {
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
 				if ( ! empty( $value ) ) {
-					$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+					$value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 					$attributes .= ' ' . $attr . '="' . $value . '"';
 				}
 			}
-			
 
 			$item_output = $args->before;
-			
 
 			/*
 			 * Glyphicons
@@ -115,17 +112,18 @@ class fashe_bootstrap_navwalker extends Walker_Nav_Menu {
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
-			if ( ! empty( $item->attr_title ) )
-				$item_output .= '<a'. $attributes .'><i class="fa fa-fw ' . esc_attr( $item->attr_title ) . '"></i>&nbsp;';
-			else
-				$item_output .= '<a'. $attributes .'>';
+			if ( ! empty( $item->attr_title ) ) {
+				$item_output .= '<a' . $attributes . '><i class="fa fa-fw ' . esc_attr( $item->attr_title ) . '"></i>&nbsp;';
+			} else {
+				$item_output .= '<a' . $attributes . '>';
+			}
 
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
 			$item_output .= $args->after;
-		
+
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-			
+
 		}
 	}
 
@@ -150,17 +148,19 @@ class fashe_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @return null Null on failure with no changes to parameters.
 	 */
 	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
-        if ( ! $element )
-            return;
+		if ( ! $element ) {
+			return;
+		}
 
-        $id_field = $this->db_fields['id'];
+		$id_field = $this->db_fields['id'];
 
-        // Display this element.
-        if ( is_object( $args[0] ) )
-           $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+		// Display this element.
+		if ( is_object( $args[0] ) ) {
+			$args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+		}
 
-        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-    }
+		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+	}
 
 	/**
 	 * Menu Fallback
@@ -183,29 +183,34 @@ class fashe_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( $container ) {
 				$fb_output = '<' . $container;
 
-				if ( $container_id )
+				if ( $container_id ) {
 					$fb_output .= ' id="' . $container_id . '"';
+				}
 
-				if ( $container_class )
+				if ( $container_class ) {
 					$fb_output .= ' class="' . $container_class . '"';
+				}
 
 				$fb_output .= '>';
 			}
 
 			$fb_output .= '<ul';
 
-			if ( $menu_id )
+			if ( $menu_id ) {
 				$fb_output .= ' id="' . $menu_id . '"';
+			}
 
-			if ( $menu_class )
+			if ( $menu_class ) {
 				$fb_output .= ' class="' . $menu_class . '"';
+			}
 
 			$fb_output .= '>';
-			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">'.esc_html__( 'Add a menu', 'fashe' ).'</a></li>';
+			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">' . esc_html__( 'Add a menu', 'fashe' ) . '</a></li>';
 			$fb_output .= '</ul>';
 
-			if ( $container )
+			if ( $container ) {
 				$fb_output .= '</' . $container . '>';
+			}
 
 			echo wp_kses_post( $fb_output );
 		}
@@ -223,8 +228,8 @@ class fashe_mobile_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @param int $depth Depth of page. Used for padding.
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
-		
-		$indent = str_repeat( "\t", $depth );
+
+		$indent  = str_repeat( "\t", $depth );
 		$output .= "\n$indent<ul role=\"menu\" class=\"sub-menu\">\n";
 	}
 
@@ -241,8 +246,6 @@ class fashe_mobile_bootstrap_navwalker extends Walker_Nav_Menu {
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-			
-		
 		/**
 		 * Dividers, Headers or Disabled
 		 * =============================
@@ -253,47 +256,48 @@ class fashe_mobile_bootstrap_navwalker extends Walker_Nav_Menu {
 		 */
 		if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) {
 			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if ( strcasecmp( $item->title, 'divider') == 0 && $depth === 1 ) {
+		} elseif ( strcasecmp( $item->title, 'divider' ) == 0 && $depth === 1 ) {
 			$output .= $indent . '<li role="presentation" class="divider">';
-		} else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
+		} elseif ( strcasecmp( $item->attr_title, 'dropdown-header' ) == 0 && $depth === 1 ) {
 			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
-		} else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
+		} elseif ( strcasecmp( $item->attr_title, 'disabled' ) == 0 ) {
 			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 		} else {
 
 			$class_names = $value = '';
 
-			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+			$classes   = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'item-menu-mobile menu-item-' . $item->ID;
 			$classes[] = 'depth-' . $depth;
-									
-							
-			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-			
-			if ( $args->has_children )
-				$class_names .= ' dropdown has-children';
 
-			if ( in_array( 'current-menu-item', $classes ) )
+			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+
+			if ( $args->has_children ) {
+				$class_names .= ' dropdown has-children';
+			}
+
+			if ( in_array( 'current-menu-item', $classes ) ) {
 				$class_names .= ' active';
+			}
 
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-			$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+			$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
 			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-			$output .= $indent . '<li' . $id . $value . $class_names .'>';
+			$output .= $indent . '<li' . $id . $value . $class_names . '>';
 
-			$atts = array();
-			$atts['title']  = ! empty( $item->title )	? $item->title	: '';
-			$atts['target'] = ! empty( $item->target )	? $item->target	: '';
-			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
+			$atts           = array();
+			$atts['title']  = ! empty( $item->title ) ? $item->title : '';
+			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
+			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 
 			// If item has_children add atts to a.
 			if ( $args->has_children && $depth === 0 ) {
-				$atts['href']   		= '#';
-				$atts['data-toggle']	= '';
-				$atts['class']			= '';
-				$atts['aria-haspopup']	= 'true';
+				$atts['href']          = '#';
+				$atts['data-toggle']   = '';
+				$atts['class']         = '';
+				$atts['aria-haspopup'] = 'true';
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
@@ -303,14 +307,12 @@ class fashe_mobile_bootstrap_navwalker extends Walker_Nav_Menu {
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
 				if ( ! empty( $value ) ) {
-					$value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+					$value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 					$attributes .= ' ' . $attr . '="' . $value . '"';
 				}
 			}
-			
 
 			$item_output = $args->before;
-			
 
 			/*
 			 * Glyphicons
@@ -319,17 +321,18 @@ class fashe_mobile_bootstrap_navwalker extends Walker_Nav_Menu {
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
-			if ( ! empty( $item->attr_title ) )
-				$item_output .= '<a'. $attributes .'><i class="fa fa-fw ' . esc_attr( $item->attr_title ) . '"></i>&nbsp;';
-			else
-				$item_output .= '<a'. $attributes .'>';
+			if ( ! empty( $item->attr_title ) ) {
+				$item_output .= '<a' . $attributes . '><i class="fa fa-fw ' . esc_attr( $item->attr_title ) . '"></i>&nbsp;';
+			} else {
+				$item_output .= '<a' . $attributes . '>';
+			}
 
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a><i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>' : '</a>';
 			$item_output .= $args->after;
-		
+
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-			
+
 		}
 	}
 
@@ -354,17 +357,19 @@ class fashe_mobile_bootstrap_navwalker extends Walker_Nav_Menu {
 	 * @return null Null on failure with no changes to parameters.
 	 */
 	public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
-        if ( ! $element )
-            return;
+		if ( ! $element ) {
+			return;
+		}
 
-        $id_field = $this->db_fields['id'];
+		$id_field = $this->db_fields['id'];
 
-        // Display this element.
-        if ( is_object( $args[0] ) )
-           $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+		// Display this element.
+		if ( is_object( $args[0] ) ) {
+			$args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+		}
 
-        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
-    }
+		parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+	}
 
 	/**
 	 * Menu Fallback
@@ -387,29 +392,34 @@ class fashe_mobile_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( $container ) {
 				$fb_output = '<' . $container;
 
-				if ( $container_id )
+				if ( $container_id ) {
 					$fb_output .= ' id="' . $container_id . '"';
+				}
 
-				if ( $container_class )
+				if ( $container_class ) {
 					$fb_output .= ' class="' . $container_class . '"';
+				}
 
 				$fb_output .= '>';
 			}
 
 			$fb_output .= '<ul';
 
-			if ( $menu_id )
+			if ( $menu_id ) {
 				$fb_output .= ' id="' . $menu_id . '"';
+			}
 
-			if ( $menu_class )
+			if ( $menu_class ) {
 				$fb_output .= ' class="' . $menu_class . '"';
+			}
 
 			$fb_output .= '>';
-			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">'.esc_html__( 'Add a menu', 'fashe' ).'</a></li>';
+			$fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">' . esc_html__( 'Add a menu', 'fashe' ) . '</a></li>';
 			$fb_output .= '</ul>';
 
-			if ( $container )
+			if ( $container ) {
 				$fb_output .= '</' . $container . '>';
+			}
 
 			echo wp_kses_post( $fb_output );
 		}
@@ -417,32 +427,33 @@ class fashe_mobile_bootstrap_navwalker extends Walker_Nav_Menu {
 }
 // Social nav Walker
 class fashe_social_navwalker extends Walker_Nav_Menu {
-    // Tell Walker where to inherit it's parent and id values
-    var $db_fields = array(
-        'parent' => 'menu_item_parent', 
-        'id'     => 'db_id' 
-    );
+	// Tell Walker where to inherit it's parent and id values
+	var $db_fields = array(
+		'parent' => 'menu_item_parent',
+		'id'     => 'db_id',
+	);
 
-    /**
-     * 
-     * 
-     * Note: Menu objects include url and title properties, so we will use those.
-     */
-    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-		
+	/**
+	 *
+	 *
+	 * Note: Menu objects include url and title properties, so we will use those.
+	 */
+	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+
 		$class = $item->classes;
-		
+
 		$setClass = '';
-		
-		if( !empty( $class['0'] ) ){
+
+		if ( ! empty( $class['0'] ) ) {
 			$setClass = $class['0'];
 		}
-		
-        $output .= sprintf( "\n<a href='%s' class='topbar-social-item fa %s'></a>\n",
-            $item->url,
-            $setClass
-        );	
-			
-    }
-	
+
+		$output .= sprintf(
+			"\n<a href='%s' class='topbar-social-item fa %s'></a>\n",
+			$item->url,
+			$setClass
+		);
+
+	}
+
 }

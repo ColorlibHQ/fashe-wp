@@ -28,7 +28,6 @@ class Epsilon_init_Dashboard {
 	 */
 	public function __construct( $theme = array() ) {
 
-	
 		$this->theme = $theme;
 
 		$theme = wp_get_theme();
@@ -62,7 +61,6 @@ class Epsilon_init_Dashboard {
 		$methods = get_class_methods( 'Epsilon_init_Dashboard' );
 		foreach ( $methods as $method ) {
 
-
 			if ( false !== strpos( $method, 'init_' ) ) {
 				$this->$method();
 			}
@@ -74,7 +72,7 @@ class Epsilon_init_Dashboard {
 	 *
 	 * @param array $theme
 	 *
-	 * @return 
+	 * @return
 	 */
 	public static function get_instance( $theme = array() ) {
 		static $inst;
@@ -136,10 +134,10 @@ class Epsilon_init_Dashboard {
 		if ( ! class_exists( 'Epsilon_Notifications' ) ) {
 			return;
 		}
-		$html = '<p>';
+		$html  = '<p>';
 		$html .=
 			vsprintf(
-			// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
+				// Translators: 1 is Theme Name, 2 is opening Anchor, 3 is closing.
 				__( 'We\'ve been working hard on making %1$s the best one out there. We\'re interested in hearing your thoughts about %1$s and what we could do to make it even better. %2$sSend your feedback our way%3$s.', 'fashe' ),
 				array(
 					'Fashe',
@@ -179,7 +177,7 @@ class Epsilon_init_Dashboard {
 		Epsilon_Dashboard::get_instance(
 			array(
 				'theme'    => array(
-					'download-id' => '212499'
+					'download-id' => '212499',
 				),
 				'tracking' => $this->theme['theme-slug'] . '_tracking_enable',
 			)

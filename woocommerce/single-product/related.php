@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see         https://docs.woocommerce.com/document/template-structure/
+ * @author      WooThemes
+ * @package     WooCommerce/Templates
  * @version     3.0.0
  */
 
@@ -32,18 +32,19 @@ if ( $related_products ) : ?>
 			<?php foreach ( $related_products as $related_product ) : ?>
 
 				<?php
-				 	$post_object = get_post( $related_product->get_id() );
+					$post_object = get_post( $related_product->get_id() );
 
 					setup_postdata( $GLOBALS['post'] =& $post_object );
-					
-					wc_get_template_part( 'content', 'product' ); 
+
+					wc_get_template_part( 'content', 'product' );
 				?>
 
 			<?php endforeach; ?>
 
-			</div> 
+			</div>
 		</div>
-	
-<?php endif;
+
+	<?php
+endif;
 
 wp_reset_postdata();

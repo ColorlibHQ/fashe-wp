@@ -22,5 +22,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-?>				
+?>
 <span class="m-text17"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>

@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see         https://docs.woocommerce.com/document/template-structure/
+ * @author      WooThemes
+ * @package     WooCommerce/Templates
  * @version     2.0.0
  */
 
@@ -27,8 +27,8 @@ $heading = esc_html( apply_filters( 'woocommerce_product_description_heading', _
 ?>
 
 <?php if ( $heading ) : ?>
-  <h2><?php echo esc_html( $heading ); ?></h2>
+	<h2><?php echo esc_html( $heading ); ?></h2>
 <?php endif; ?>
 <div class="s-text8">
-<?php the_content(); ?>
+	<?php the_content(); ?>
 </div>

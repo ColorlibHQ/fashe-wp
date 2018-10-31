@@ -26,16 +26,16 @@ if ( $max_value && $min_value === $max_value ) {
 } else {
 	?>
 	<div class="quantity flex-w bo5 of-hidden m-r-22 m-t-10 m-b-10">
-	
+
 		<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
 			<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 		</button>
-		<input type="number" id="<?php echo esc_attr( $input_id ); ?>" class="input-text qty text size8 m-text18 t-center num-product" step="<?php echo esc_attr( $step ); ?>" min="<?php echo esc_attr( $min_value ); ?>" max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $input_value ); ?>" title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'fashe' ) ?>" size="4" pattern="<?php echo esc_attr( $pattern ); ?>" inputmode="<?php echo esc_attr( $inputmode ); ?>" aria-labelledby="<?php echo ! empty( $args['product_name'] ) ? sprintf( esc_attr__( '%s quantity', 'fashe' ), $args['product_name'] ) : ''; ?>" />
-		
+		<input type="number" id="<?php echo esc_attr( $input_id ); ?>" class="input-text qty text size8 m-text18 t-center num-product" step="<?php echo esc_attr( $step ); ?>" min="<?php echo esc_attr( $min_value ); ?>" max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $input_value ); ?>" title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'fashe' ); ?>" size="4" pattern="<?php echo esc_attr( $pattern ); ?>" inputmode="<?php echo esc_attr( $inputmode ); ?>" aria-labelledby="<?php echo ! empty( $args['product_name'] ) ? sprintf( esc_attr__( '%s quantity', 'fashe' ), esc_attr( $args['product_name'] ) ) : ''; ?>" />
+
 		<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
 			<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
 		</button>
-		
+
 	</div>
 	<?php
 }
