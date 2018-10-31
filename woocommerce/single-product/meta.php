@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see         https://docs.woocommerce.com/document/template-structure/
+ * @author      WooThemes
+ * @package     WooCommerce/Templates
  * @version     3.0.0
  */
 
@@ -33,9 +33,9 @@ global $product;
 
 	<?php endif; ?>
 
-	<?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in s-text8">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'fashe' ) . ' ', '</span>' ); ?>
+	<?php echo esc_html( wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in s-text8">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'fashe' ) . ' ', '</span>' ) ); ?>
 
-	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'fashe' ) . ' ', '</span>' ); ?>
+	<?php echo esc_html( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'fashe' ) . ' ', '</span>' ) ); ?>
 
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 

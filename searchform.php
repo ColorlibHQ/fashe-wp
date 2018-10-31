@@ -1,7 +1,7 @@
-<?php 
+<?php
 // Block direct access
-if( !defined( 'ABSPATH' ) ){
-    exit( 'Direct script access denied.' );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct script access denied.' );
 }
 /**
  * @Packge     : Fashe

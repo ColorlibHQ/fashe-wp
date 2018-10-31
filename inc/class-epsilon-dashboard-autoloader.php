@@ -31,7 +31,7 @@ class Epsilon_Dashboard_Autoloader {
 	public function load( $class = '' ) {
 
 		/**
-		 * All classes are prefixed with 
+		 * All classes are prefixed with
 		 */
 		$parts = explode( '_', $class );
 		$bind  = implode( '-', $parts );
@@ -40,7 +40,7 @@ class Epsilon_Dashboard_Autoloader {
 		 * We provide working directories
 		 */
 		$directories = array(
-			FASHE_DIR_PATH_LIBS ,
+			FASHE_DIR_PATH_LIBS,
 			FASHE_DIR_PATH_LIBS . 'epsilon-framework/',
 			FASHE_DIR_PATH_LIBS . 'epsilon-theme-dashboard/',
 			FASHE_DIR_PATH_LIBS . 'epsilon-theme-dashboard/inc/',
@@ -61,7 +61,6 @@ class Epsilon_Dashboard_Autoloader {
 				return;
 			}
 		}
-
 
 	}
 }
