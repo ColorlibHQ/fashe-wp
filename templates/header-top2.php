@@ -29,7 +29,7 @@
 		<?php
 		// Header login Icon
 		$login_url = fashe_opt( 'fashe_login_url' );
-		$cart     = fashe_opt( 'fashe-cart-toggle-settings' );
+		$cart     = fashe_opt( 'fashe-cart-toggle-settings', true );
 
 		if ( $login_url ) :
 			?>
@@ -116,7 +116,7 @@ endif;
 				endif;
 				// Header login Icon
 				$login_url = fashe_opt( 'fashe_login_url' );
-				$cart     = fashe_opt( 'fashe-cart-toggle-settings' );
+				$cart     = fashe_opt( 'fashe-cart-toggle-settings', true );
 
 				if ( $login_url ) :
 					?>

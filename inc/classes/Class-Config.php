@@ -103,6 +103,9 @@ final class Fashe {
 
 		// support html5
 		add_theme_support( 'html5' );
+		
+		// support custom background
+		add_theme_support( 'custom-background' );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
