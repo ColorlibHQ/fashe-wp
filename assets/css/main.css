@@ -90,7 +90,6 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 body, html {
-	height: 100%;
 	font-family: Montserrat-Regular, sans-serif;
   font-weight: 400;
 }
@@ -1132,7 +1131,6 @@ li.sale-noti > a {
 
 .side-menu .sub-menu > li {
   padding-left: 12px;
-  padding-top: 
 }
 
 .side-menu .sub-menu a:hover {
@@ -1287,6 +1285,9 @@ li.sale-noti > a {
   display: flex;
   align-items: center;
   position: unset;
+}
+.container-menu-header-v3 .header-icons3 .header-wrapicon2 {
+  margin: 0 auto;
 }
 
 /*[ Header cart ]
