@@ -12,7 +12,8 @@ class fashe_theme_customizer {
 
 	function __construct() {
 		add_action( 'customize_register', array( $this, 'fashe_theme_customizer_options' ) );
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'fashe_customizer_js' ) );
+		add_action( 'customize_preview_init', array( $this, 'fashe_customizer_preview_init_js' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'fashe_customizer_controls_js' ) );
 	}
 
 	// Customize register hook
@@ -24,7 +25,10 @@ class fashe_theme_customizer {
 		include FASHE_DIR_PATH_INC . 'customizer/fields/fields.php';
 
 		// Change panel to theme option
-		$wp_customize->get_section( 'title_tagline' )->panel = 'fashe_theme_options_panel';
+		$wp_customize->get_section( 'title_tagline' )->panel = 'fashe_options_panel';
+
+		// Change background control section
+		$wp_customize->get_control( 'background_color' )->section = 'background_image';
 
 		// change priorities
 		$wp_customize->get_section( 'title_tagline' )->priority = 0;
@@ -34,19 +38,7 @@ class fashe_theme_customizer {
 			'fashe-copyright-text-settings',
 			array( 'selector' => '.footer-copy-right-text' )
 		);
-
-		// Header cart selective refresh
-		$wp_customize->selective_refresh->add_partial(
-			'fashe-cart-toggle-settings',
-			array( 'selector' => '.header-wrapicon2' )
-		);
-
-		// Back to top selective refresh
-		$wp_customize->selective_refresh->add_partial(
-			'fashe-gototop-toggle-settings',
-			array( 'selector' => '.btn-back-to-top' )
-		);
-
+		
 		// login button selective refresh
 		$wp_customize->selective_refresh->add_partial(
 			'fashe_login_url',
@@ -54,14 +46,17 @@ class fashe_theme_customizer {
 		);
 
 		// Rename customizer color section
-		$wp_customize->get_section( 'colors' )->title = __( 'Header Color', 'fashe' );
+		$wp_customize->get_section('colors')->title = esc_html__( 'Header Color', 'fashe' );
+
+		// Rename customizer background image section
+		$wp_customize->get_section('background_image')->title = esc_html__( 'Background', 'fashe' );
 
 	}
 
 
-	// Customizer js enqueue
+	// Customizer controls js enqueue
 
-	public function fashe_customizer_js() {
+	public function fashe_customizer_controls_js() {
 
 		wp_enqueue_script( 'fashe-customizer', FASHE_DIR_URI . 'inc/customizer/js/customizer.js', array( 'customize-controls' ), '1.0', true );
 
@@ -77,6 +72,14 @@ class fashe_theme_customizer {
 
 	}
 
+	// Customizer preview init js enqueue
+
+    public function fashe_customizer_preview_init_js() {
+
+        wp_enqueue_script( 'fashe-customizer-preview', FASHE_DIR_URI.'inc/customizer/js/customizer-preview.js', array( 'customize-preview' ), '1.0', true );
+
+	}
+	
 	// Image sanitization callback.
 
 	public static function fashe_sanitize_image( $image, $setting ) {

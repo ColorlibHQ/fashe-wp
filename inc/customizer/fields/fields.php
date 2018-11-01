@@ -21,6 +21,7 @@ Epsilon_Customizer::add_field(
 		'type'        => 'epsilon-toggle',
 		'label'       => esc_html__( 'Go To Top Button', 'fashe' ),
 		'description' => esc_html__( 'Toggle the display of the go to top button.', 'fashe' ),
+		'transport'   => 'postMessage',
 		'section'     => 'fashe_general_options_section',
 		'default'     => true,
 	)
@@ -32,9 +33,10 @@ if ( defined( 'WC_PLUGIN_FILE' ) ) {
 		array(
 			'type'        => 'epsilon-toggle',
 			'label'       => esc_html__( 'Header Cart Button', 'fashe' ),
+			'transport'   => 'postMessage',
 			'description' => esc_html__( 'Toggle the display of the header cart button.', 'fashe' ),
 			'section'     => 'fashe_general_options_section',
-			'default'     => false,
+			'default'     => true,
 		)
 	);
 }

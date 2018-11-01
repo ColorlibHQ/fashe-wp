@@ -74,7 +74,7 @@ if ( ! function_exists( 'fashe_footer_area' ) ) {
 // Footer back to top hook function
 if ( ! function_exists( 'fashe_back_to_top' ) ) {
 	function fashe_back_to_top() {
-		$opt = get_theme_mod( 'fashe-gototop-toggle-settings' );
+		$opt = get_theme_mod( 'fashe-gototop-toggle-settings', true );
 
 		if ( $opt ) :
 			?>
