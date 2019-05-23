@@ -94,6 +94,5 @@ class Epsilon_Init_Notify_System extends Epsilon_Notify_System {
 			$arr['active']    = defined( 'WPCF7_VERSION' );
 		}
 
-		return $arr;
 	}
 }

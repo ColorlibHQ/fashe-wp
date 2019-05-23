@@ -1,3 +1,29 @@
+<!-- top noti -->
+<?php
+$promotext      = fashe_opt( 'fashe_header_promo_text', __( '20% off everything!', 'fashe' ) );
+$promoanchor    = fashe_opt( 'fashe_header_promoanchor_text', __( 'Shop Now', 'fashe' ) );
+$promoanchorurl = fashe_opt( 'fashe_header_promoanchor_url', '#' );
+
+if ( $promotext ) :
+	?>
+    <div class="flex-c-m size22 promo-bar bg0 s-text21 pos-relative">
+		<?php
+		if ( $promotext ) {
+			echo wp_kses_post( $promotext );
+		}
+		//
+		if ( $promoanchor && $promoanchorurl ) {
+			echo '<a href="' . esc_html( $promoanchorurl ) . '" class="s-text22 hov6 p-l-5">' . esc_html( $promoanchor ) . '</a>';
+		}
+		?>
+        <button class="flex-c-m pos2 size23 colorwhite eff3 trans-0-4 btn-romove-top-noti">
+            <i class="fa fa-remove fs-13" aria-hidden="true"></i>
+        </button>
+    </div>
+<?php
+endif;
+?>
+
 <!-- Header -->
 <header class="header3">
 	<!-- Header desktop -->
@@ -150,9 +176,7 @@
 					<div class="topbar-child2-mobile">
 						<?php
 						if ( $email ) :
-							?>
-						<span class="topbar-email"><?php echo esc_html( $email ); ?></span>
-							<?php
+							echo '<span class="topbar-email"><a href="mailto:'. esc_html( $email ) .'">'. esc_html( $email ) .'</a></span>';
 						endif;
 						//
 						if ( $header_translate ) :

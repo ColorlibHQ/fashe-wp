@@ -33,9 +33,9 @@ global $product;
 
 	<?php endif; ?>
 
-	<?php echo esc_html( wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in s-text8">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'fashe' ) . ' ', '</span>' ) ); ?>
+	<?php echo wp_kses_post( wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in s-text8">' . _n( 'Category:', 'Categories:', count( $product->get_category_ids() ), 'fashe' ) . ' ', '</span>' ) ); ?>
 
-	<?php echo esc_html( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'fashe' ) . ' ', '</span>' ) ); ?>
+	<?php echo wp_kses_post( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', count( $product->get_tag_ids() ), 'fashe' ) . ' ', '</span>' ) ); ?>
 
 	<?php do_action( 'woocommerce_product_meta_end' ); ?>
 

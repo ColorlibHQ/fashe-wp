@@ -69,6 +69,11 @@ if ( ! defined( 'FASHE_DIR_PATH_WIDGET' ) ) {
 }
 
 
+function fashe_admin_style() {
+	wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/assets/css/admin-style.css', false, '1.0.0' );
+	wp_enqueue_style( 'custom_wp_admin_css' );
+}
+add_action( 'admin_enqueue_scripts', 'fashe_admin_style' );
 /**
  * Include File
  *

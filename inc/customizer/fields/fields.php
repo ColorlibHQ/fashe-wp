@@ -214,7 +214,7 @@ if ( defined( 'WEGLOT_VERSION' ) ) {
 		'fashe-headerTranslate-toggle-settings',
 		array(
 			'type'        => 'epsilon-toggle',
-			'label'       => esc_html__( 'Language Translate Option Show/Hide', 'fashe' ),
+			'label'       => esc_html__( 'Language Translate On/Off', 'fashe' ),
 			'description' => esc_html__( 'Toggle the header language translate show.', 'fashe' ),
 			'section'     => 'fashe_headertop_options_section',
 			'default'     => true,

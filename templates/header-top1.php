@@ -28,7 +28,7 @@
 			// Email
 			$email = fashe_opt( 'fashe_header_top_email', 'fashe@example.com' );
 			if ( $email ) {
-				echo '<span class="topbar-email">' . esc_html( $email ) . '</span>';
+				echo '<span class="topbar-email"><a href="mailto:'. esc_html( $email ) .'">'. esc_html( $email ) .'</a></span>';
 			}
 			//  Header Translate
 			$header_translate = fashe_opt( 'fashe-headerTranslate-toggle-settings' );

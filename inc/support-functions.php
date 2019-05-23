@@ -21,7 +21,7 @@ function fashe_post_cats() {
 	if ( $cats ) {
 
 		$categories .= '<div class="posts--cat m--30-0-0">';
-		$categories .= '<ul class="nav"><li><span><i class="fa fm fa-th-list"></i>' . esc_html( 'Catagory :', 'fashe' ) . '</span></li>';
+		$categories .= '<ul class="nav"><li><span><i class="fa fm fa-th-list"></i>' . esc_html__( 'Catagory :', 'fashe' ) . '</span></li>';
 
 		foreach ( $cats as $cat ) {
 			$categories .= '<li><a href="' . esc_url( get_category_link( $cat->term_id ) ) . '" class="category-link">' . esc_html( $cat->name ) . '</a></li>';
@@ -129,12 +129,10 @@ function fashe_cart_count( $class = '' ) {
 			<img src="<?php echo esc_url( FASHE_DIR_ASSETS_URI ); ?>img/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="<?php esc_html_e( 'ICON', 'fashe' ); ?>">
 			<span class="header-icons-noti"><?php echo esc_html( sprintf( '%d', WC()->cart->cart_contents_count ) ); ?></span>
 			<div class="header-cart header-dropdown">
-				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+				<?php woocommerce_mini_cart(); ?>
 			</div>
 		</div>
 		<?php
 	endif;
 }
 
-
-?>

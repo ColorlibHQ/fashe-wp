@@ -149,8 +149,9 @@
     /*[ remove top noti ]
     ===========================================================*/
     $('.btn-romove-top-noti').on('click', function(){
-        $(this).parent().remove();
+        $(this).parent().fadeOut();
     })
+
 
 
     /*[ Block2 button wishlist ]

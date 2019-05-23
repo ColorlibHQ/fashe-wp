@@ -13,7 +13,7 @@
  * @see         https://docs.woocommerce.com/document/template-structure/
  * @author      WooThemes
  * @package     WooCommerce/Templates
- * @version     3.3.0
+ * @version     3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -21,18 +21,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="flex-w">
-	<form class="woocommerce-ordering" method="get">
-		<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-			<select name="orderby" class="orderby selection-2">
-				<?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
-					<option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
-				<?php endforeach; ?>
-			</select>
-			<input type="hidden" name="paged" value="1" />
-			<?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
-		</div>
-	</form>
-
-</div>
+    <div class="flex-w">
+        <form class="woocommerce-ordering" method="get">
+            <div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
+                <select name="orderby" class="orderby selection-2">
+                    <?php foreach ( $catalog_orderby_options as $id => $name ) : ?>
+                        <option value="<?php echo esc_attr( $id ); ?>" <?php selected( $orderby, $id ); ?>><?php echo esc_html( $name ); ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <input type="hidden" name="paged" value="1" />
+                <?php wc_query_string_form_fields( null, array( 'orderby', 'submit', 'paged', 'product-page' ) ); ?>
+            </div>
+        </form>
+    </div>
 </div>

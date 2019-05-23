@@ -156,7 +156,7 @@ function fashe_theme_logo( $class = '' ) {
 	if ( ! empty( $image_url[0] ) ) {
 		$site_logo = '<a class="' . esc_attr( $class ) . '" href="' . esc_url( $site_url ) . '"><img src="' . esc_url( $image_url[0] ) . '" alt="' . esc_attr( fashe_image_alt( $image_url[0] ) ) . '"></a>';
 	} else {
-		$site_logo = '<h2><a class="' . esc_attr( $class ) . '" href="' . esc_url( $site_url ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a></h2>';
+		$site_logo = '<h2><a class="' . esc_attr( $class ) . '" href="' . esc_url( $site_url ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a></h2><span class="header-tagline"><span class="tagline-divider">-</span>'. get_bloginfo('description') .'</span>';
 	}
 
 	return $site_logo;

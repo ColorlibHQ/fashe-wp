@@ -58,7 +58,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 							<?php echo esc_html( $thumbnail ) . esc_html( $product_name ); ?>
 						<?php else : ?>
 							<a href="<?php echo esc_url( $product_permalink ); ?>">
-								<?php echo esc_html( $thumbnail ) . esc_html( $product_name ); ?>
+								<?php echo  wp_kses_post($thumbnail) . esc_html( $product_name ); ?>
 							</a>
 						<?php endif; ?>
 						<?php echo esc_html( wc_get_formatted_cart_item_data( $cart_item ) ); ?>
@@ -73,7 +73,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 		?>
 	</ul>
 
-	<p class="woocommerce-mini-cart__total total"><strong><?php esc_html_e( 'Subtotal', 'fashe' ); ?>:</strong> <?php echo esc_html( WC()->cart->get_cart_subtotal() ); ?></p>
+	<p class="woocommerce-mini-cart__total total"><strong><?php esc_html_e( 'Subtotal', 'fashe' ); ?>:</strong> <?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?></p>
 
 	<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
