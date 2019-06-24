@@ -2,3 +2,7 @@
 .epsilon-plugin-box{
     margin-right: 1% !important;
 }
+
+.dashicons-admin-tools:before{
+    content: "\f102";
+}
