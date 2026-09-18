@@ -15,10 +15,10 @@
 
 
 // Go to top Button option field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-gototop-toggle-settings',
 	array(
-		'type'        => 'epsilon-toggle',
+		'type'        => 'colorlib-toggle',
 		'label'       => esc_html__( 'Go To Top Button', 'fashe' ),
 		'description' => esc_html__( 'Toggle the display of the go to top button.', 'fashe' ),
 		'transport'   => 'postMessage',
@@ -28,10 +28,10 @@ Epsilon_Customizer::add_field(
 );
 // Cart button option field
 if ( defined( 'WC_PLUGIN_FILE' ) ) {
-	Epsilon_Customizer::add_field(
+	Colorlib_Customizer::add_field(
 		'fashe-cart-toggle-settings',
 		array(
-			'type'        => 'epsilon-toggle',
+			'type'        => 'colorlib-toggle',
 			'label'       => esc_html__( 'Header Cart Button', 'fashe' ),
 			'transport'   => 'postMessage',
 			'description' => esc_html__( 'Toggle the display of the header cart button.', 'fashe' ),
@@ -41,10 +41,10 @@ if ( defined( 'WC_PLUGIN_FILE' ) ) {
 	);
 }
 // Global header layout field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-header-layout',
 	array(
-		'type'        => 'epsilon-layouts',
+		'type'        => 'colorlib-layouts',
 		'label'       => esc_html__( 'Global Header Layout', 'fashe' ),
 		'section'     => 'fashe_general_options_section',
 		'description' => esc_html__( 'Select global header layout.', 'fashe' ),
@@ -72,7 +72,7 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Header login url field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_login_url',
 	array(
 		'type'              => 'text',
@@ -89,7 +89,7 @@ Epsilon_Customizer::add_field(
 
 $url = 'https://www.instagram.com/developer/authentication/';
 
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_igaccess_token',
 	array(
 		'type'              => 'text',
@@ -105,7 +105,7 @@ Epsilon_Customizer::add_field(
 // Google map api key field
 $url = 'https://developers.google.com/maps/documentation/geocoding/get-api-key';
 
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_map_apikey',
 	array(
 		'type'              => 'text',
@@ -118,10 +118,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Theme Main Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_themecolor',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Theme Main Color.', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_general_options_section',
@@ -133,10 +133,10 @@ Epsilon_Customizer::add_field(
  ***********************************/
 
 // Social Media option field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-headersocial-toggle-settings',
 	array(
-		'type'        => 'epsilon-toggle',
+		'type'        => 'colorlib-toggle',
 		'label'       => esc_html__( 'Header Social Show/Hide', 'fashe' ),
 		'description' => esc_html__( 'Toggle the header top social active. Before toggle make sure you have create social menu from Appearance > menus.', 'fashe' ),
 		'section'     => 'fashe_headertop_options_section',
@@ -145,7 +145,7 @@ Epsilon_Customizer::add_field(
 );
 
 // Header Top Text
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_header_top_text',
 	array(
 		'type'              => 'text',
@@ -157,7 +157,7 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Header Promo text
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_header_promo_text',
 	array(
 		'type'              => 'text',
@@ -169,7 +169,7 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Header Promo link text
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_header_promoanchor_text',
 	array(
 		'type'              => 'text',
@@ -181,7 +181,7 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Header Promo link url
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_header_promoanchor_url',
 	array(
 		'type'              => 'text',
@@ -194,7 +194,7 @@ Epsilon_Customizer::add_field(
 );
 
 // Header Top Email
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_header_top_email',
 	array(
 		'type'              => 'text',
@@ -210,10 +210,10 @@ Epsilon_Customizer::add_field(
 
 if ( defined( 'WEGLOT_VERSION' ) ) {
 
-	Epsilon_Customizer::add_field(
+	Colorlib_Customizer::add_field(
 		'fashe-headerTranslate-toggle-settings',
 		array(
-			'type'        => 'epsilon-toggle',
+			'type'        => 'colorlib-toggle',
 			'label'       => esc_html__( 'Language Translate On/Off', 'fashe' ),
 			'description' => esc_html__( 'Toggle the header language translate show.', 'fashe' ),
 			'section'     => 'fashe_headertop_options_section',
@@ -222,10 +222,10 @@ if ( defined( 'WEGLOT_VERSION' ) ) {
 	);
 }
 // Header Top Background Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_header_top_bgColor',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Header Top Background Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_headertop_options_section',
@@ -233,10 +233,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Header Top Text Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_header_top_textColor',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Header Top Text Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_headertop_options_section',
@@ -244,10 +244,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Page Header Text Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_headertextcolor',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Header Text Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'colors',
@@ -255,10 +255,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Page Header Background Color Picker
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_headerbgcolor',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Header Background Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'colors',
@@ -273,7 +273,7 @@ Epsilon_Customizer::add_field(
 
 
 // Post excerpt length field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_post_excerpt',
 	array(
 		'type'              => 'text',
@@ -285,17 +285,17 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Blog sidebar layout field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-sidebarlayouts-settings',
 	array(
-		'type'        => 'epsilon-layouts',
+		'type'        => 'colorlib-layouts',
 		'label'       => esc_html__( 'Blog Layout', 'fashe' ),
 		'section'     => 'fashe_blog_options_section',
 		'description' => esc_html__( 'Select the option to set blog page layout.', 'fashe' ),
 		'layouts'     => array(
-			'1' => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/one-column.png',
-			'2' => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-titleright.jpg',
-			'3' => get_template_directory_uri() . '/inc/libraries/epsilon-framework/assets/img/epsilon-section-titleleft.jpg',
+			'1' => get_template_directory_uri() . '/inc/customizer/colorlib-customizer/assets/img/layout-one-column.svg',
+			'2' => get_template_directory_uri() . '/inc/customizer/colorlib-customizer/assets/img/layout-sidebar-right.svg',
+			'3' => get_template_directory_uri() . '/inc/customizer/colorlib-customizer/assets/img/layout-sidebar-left.svg',
 		),
 		'default'     => array(
 			'columnsCount' => 1,
@@ -321,20 +321,20 @@ Epsilon_Customizer::add_field(
 ***************************/
 
 // Shop page settings separator
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-woo-shop-separator',
 	array(
-		'type'    => 'epsilon-separator',
+		'type'    => 'colorlib-separator',
 		'label'   => esc_html__( 'Shop page settings', 'fashe' ),
 		'section' => 'fashe_woocommerce_options_section',
 	)
 );
 
 // WooCommerce shop title show/hide option field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-woo-shoppage-title-settings',
 	array(
-		'type'        => 'epsilon-toggle',
+		'type'        => 'colorlib-toggle',
 		'label'       => esc_html__( 'Shop Title Show/Hide', 'fashe' ),
 		'description' => esc_html__( 'Toggle the shop page title show or hide.', 'fashe' ),
 		'section'     => 'fashe_woocommerce_options_section',
@@ -343,10 +343,10 @@ Epsilon_Customizer::add_field(
 );
 
 // Product per page number field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_woo_product_perpage',
 	array(
-		'type'              => 'epsilon-slider',
+		'type'              => 'colorlib-slider',
 		'label'             => esc_html__( 'Shop product per page', 'fashe' ),
 		'description'       => esc_html__( 'Set shop product per page ( Default 10 ).', 'fashe' ),
 		'section'           => 'fashe_woocommerce_options_section',
@@ -360,20 +360,20 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Details page settings separator
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-woo-details-separator',
 	array(
-		'type'        => 'epsilon-separator',
+		'type'        => 'colorlib-separator',
 		'label'       => esc_html__( 'Product details page settings', 'fashe' ),
 		'description' => esc_html__( 'To see setting taking effect click on product to go product details.', 'fashe' ),
 		'section'     => 'fashe_woocommerce_options_section',
 	)
 );
 // Related Product Show hide
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-woo-related-product-settings',
 	array(
-		'type'        => 'epsilon-toggle',
+		'type'        => 'colorlib-toggle',
 		'label'       => esc_html__( 'Related Product Show/Hide', 'fashe' ),
 		'description' => esc_html__( 'Toggle the related product show or hide in product details page.', 'fashe' ),
 		'section'     => 'fashe_woocommerce_options_section',
@@ -381,10 +381,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Related Product number field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_related_product_number',
 	array(
-		'type'              => 'epsilon-slider',
+		'type'              => 'colorlib-slider',
 		'label'             => esc_html__( 'Related product per section', 'fashe' ),
 		'description'       => esc_html__( 'Set single page related product per section ( Default 4 ).', 'fashe' ),
 		'section'           => 'fashe_woocommerce_options_section',
@@ -403,7 +403,7 @@ Epsilon_Customizer::add_field(
  ***********************************/
 
 // 404 text #1 field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_fof_text_one',
 	array(
 		'type'              => 'text',
@@ -414,7 +414,7 @@ Epsilon_Customizer::add_field(
 	)
 );
 // 404 text #2 field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_fof_text_two',
 	array(
 		'type'              => 'text',
@@ -425,10 +425,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // 404 text #1 color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_fof_textonecolor_settings',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( '404 Text #1 Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_fof_options_section',
@@ -436,10 +436,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // 404 text #2 color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_fof_texttwocolor_settings',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( '404 Text #2 Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_fof_options_section',
@@ -447,10 +447,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // 404 background color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_fof_bgcolor_settings',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( '404 Page Background Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_fof_options_section',
@@ -463,10 +463,10 @@ Epsilon_Customizer::add_field(
  ***********************************/
 
 // Footer widget toggle field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-widget-toggle-settings',
 	array(
-		'type'        => 'epsilon-toggle',
+		'type'        => 'colorlib-toggle',
 		'label'       => esc_html__( 'Footer Widget On/Off', 'fashe' ),
 		'description' => esc_html__( 'Toggle to display footer widgets.', 'fashe' ),
 		'section'     => 'fashe_footer_options_section',
@@ -474,10 +474,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 //Footer payment method option add settings
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-footer-payment-settings',
 	array(
-		'type'         => 'epsilon-repeater',
+		'type'         => 'colorlib-repeater',
 		'section'      => 'fashe_footer_options_section',
 		'label'        => esc_html__( 'Footer Payment Method', 'fashe' ),
 		'button_label' => esc_html__( 'Add new method', 'fashe' ),
@@ -493,7 +493,7 @@ Epsilon_Customizer::add_field(
 			),
 			'paymentimg' => array(
 				'label'   => esc_html__( 'Payment Method Image', 'fashe' ),
-				'type'    => 'epsilon-image',
+				'type'    => 'colorlib-image',
 				'default' => '',
 			),
 		),
@@ -502,20 +502,20 @@ Epsilon_Customizer::add_field(
 
 
 // Footer copy right text add settings
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe-copyright-text-settings',
 	array(
-		'type'    => 'epsilon-text-editor',
+		'type'    => 'colorlib-text-editor',
 		'label'   => esc_html__( 'Footer copyright text', 'fashe' ),
 		'section' => 'fashe_footer_options_section',
 		'default' => sprintf( __( 'Copyright &copy; %s All rights reserved.', 'fashe' ), date( 'Y' ) ),
 	)
 );
 // Footer widget background color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_footer_bgColor_settings',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Footer Background Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_footer_options_section',
@@ -523,10 +523,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Footer widget text color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_footer_color_settings',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Footer Text Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_footer_options_section',
@@ -534,10 +534,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Footer widget title color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_footer_widgettitlecolor_settings',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Footer Title Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_footer_options_section',
@@ -545,10 +545,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Footer widget anchor color field
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_footer_anchorcolor_settings',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Footer Anchor Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_footer_options_section',
@@ -556,10 +556,10 @@ Epsilon_Customizer::add_field(
 	)
 );
 // Footer widget anchor hover Color
-Epsilon_Customizer::add_field(
+Colorlib_Customizer::add_field(
 	'fashe_footer_anchorhovcolor_settings',
 	array(
-		'type'              => 'epsilon-color-picker',
+		'type'              => 'colorlib-color-picker',
 		'label'             => esc_html__( 'Footer Anchor Hover Color', 'fashe' ),
 		'sanitize_callback' => 'sanitize_text_field',
 		'section'           => 'fashe_footer_options_section',
