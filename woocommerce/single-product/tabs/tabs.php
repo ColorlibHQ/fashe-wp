@@ -42,8 +42,8 @@ if ( ! empty( $tabs ) ) : ?>
 	<div class="wrap-dropdown-content p-t-15 p-b-14<?php echo esc_attr( $active ); ?>">
 		<h5 class="<?php echo esc_attr( $key ); ?>_tab js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4" id="dropdown-title-<?php echo esc_attr( $key ); ?>">
 			<?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ); ?>
-			<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
-			<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+			<i class="down-mark fs-12 color1 fa-solid fa-minus dis-none" aria-hidden="true"></i>
+			<i class="up-mark fs-12 color1 fa-solid fa-plus" aria-hidden="true"></i>
 		</h5>
 
 		<div class="dropdown-content dis-none p-t-15 p-b-23" id="dropdown-<?php echo esc_attr( $key ); ?>">

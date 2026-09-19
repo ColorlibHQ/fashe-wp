@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<form role="search" class="header__search-form" action="<?php echo esc_url( site_url( '/' ) ); ?>">
 		<input class="s-text7 size16 p-l-23 p-r-50" type="text" name="s" placeholder="<?php esc_html_e( 'Search', 'fashe' ); ?>">
 		<button class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4">
-			<i class="fs-13 fa fa-search" aria-hidden="true"></i>
+			<i class="fs-13 fa-solid fa-search" aria-hidden="true"></i>
 		</button>
 	</form>
 </div>

@@ -68,7 +68,7 @@ if ( $promotext ) :
         }
         ?>
         <button class="flex-c-m pos2 size23 colorwhite eff3 trans-0-4 btn-romove-top-noti">
-            <i class="fa fa-remove fs-13" aria-hidden="true"></i>
+            <i class="fa-solid fa-remove fs-13" aria-hidden="true"></i>
         </button>
     </div>
 	<?php
