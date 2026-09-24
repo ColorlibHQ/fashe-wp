@@ -520,6 +520,135 @@ iframe {
   right: 5px;
 }
 
+/*[ Styled select (ColorlibUI.enhanceSelects) ]
+-----------------------------------------------------------
+  The shop's sort select, with the look the Select2 rules above gave it.
+*/
+.nice-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 30px 0 10px;
+  background-color: transparent;
+  font-family: Montserrat-Regular;
+  font-size: 13px;
+  line-height: 20px;
+  color: #888888;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.nice-select:focus-visible {
+  outline: 1px solid #888888;
+  outline-offset: -1px;
+}
+
+.nice-select .current {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nice-select:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 5px;
+  height: 5px;
+  margin-top: -4px;
+  border-right: 1px solid #888888;
+  border-bottom: 1px solid #888888;
+  transform: rotate(45deg);
+}
+
+.nice-select .list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1251;
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  color: #888888;
+  line-height: 1.5;
+}
+
+.nice-select.open .list {
+  display: block;
+}
+
+.nice-select .option {
+  padding: 5px 6px;
+}
+
+.nice-select .option.selected,
+.nice-select .option:hover {
+  background-color: #e65540;
+  color: white;
+}
+
+.nice-select .option.disabled {
+  background-color: transparent;
+  color: #999999;
+  cursor: default;
+}
+
+/* Select2 opened its list in <body>; this one opens inside the box. */
+.rs2-select2.of-hidden {
+  overflow: visible;
+}
+
+.rs2-select2 .nice-select {
+  height: 50px;
+  padding-left: 32px;
+  background-color: white;
+  color: #555555;
+}
+
+.rs2-select2 .nice-select:after {
+  right: 18px;
+}
+
+/* A product's variation selects stay native (WooCommerce manages their
+   options), drawn like the Select2 box they had. */
+.woocommerce div.product form.cart .variations .rs2-select2 select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 45px;
+  margin: 0;
+  padding: 0 36px 0 32px;
+  border: none;
+  border-radius: 0;
+  background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0h8L4 5z' fill='%23888888'/%3E%3C/svg%3E") no-repeat right 16px center;
+  font-family: Montserrat-Regular;
+  font-size: 13px;
+  line-height: 20px;
+  color: #555555;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.woocommerce div.product form.cart .variations .rs2-select2 select:focus-visible {
+  outline: 1px solid #888888;
+  outline-offset: -1px;
+}
+
 
 /*[ Header ]
 ///////////////////////////////////////////////////////////

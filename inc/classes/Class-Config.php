@@ -182,18 +182,6 @@ final class Fashe {
 					'version'    => '3.5.2',
 				),
 				array(
-					'handler'    => 'fashe-wp-animsition',
-					'file'       => $css_path . 'animsition.min.css',
-					'dependency' => array(),
-					'version'    => '4.0.2',
-				),
-				array(
-					'handler'    => 'fashe-wp-select2',
-					'file'       => $css_path . 'select2.min.css',
-					'dependency' => array(),
-					'version'    => '4.0.3',
-				),
-				array(
 					'handler'    => 'fashe-wp-daterangepicker',
 					'file'       => $css_path . 'daterangepicker.css',
 					'dependency' => array(),
@@ -209,7 +197,7 @@ final class Fashe {
 					'handler'    => 'fashe-wp-fashe',
 					'file'       => $css_path . 'main.css',
 					'dependency' => array(),
-					'version'    => $this->fashe_version,
+					'version'    => $this->fashe_version . '-s2',
 				),
 				array(
 					'handler' => 'fashe-wp-fashe-style',
@@ -218,40 +206,26 @@ final class Fashe {
 			),
 			'scripts' => array(
 
-				array(
-					'handler'    => 'fashe-wp-animsition',
-					'file'       => $js_path . 'animsition.min.js',
-					'dependency' => array( 'jquery' ),
-					'version'    => '1.0',
-					'in_footer'  => true,
-				),
 
 				array(
 					'handler'    => 'fashe-wp-bootstrap',
 					'file'       => $js_path . 'bootstrap.min.js',
-					'dependency' => array( 'jquery' ),
+					'dependency' => array(),
 					'version'    => '5.3.8-4',
 					'in_footer'  => true,
 				),
 				array(
-					'handler'    => 'fashe-wp-select2',
-					'file'       => $js_path . 'select2.min.js',
-					'dependency' => array( 'jquery' ),
-					'version'    => '4.0.3',
-					'in_footer'  => true,
-				),
-				array(
-					'handler'    => 'fashe-wp-fashe-woo-custom',
-					'file'       => $js_path . 'woo-custom.js',
-					'dependency' => array( 'jquery', 'jquery-slick' ),
-					'version'    => $this->fashe_version,
-					'in_footer'  => true,
+					'handler'		=> 'fashe-ui-js',
+					'file' 			=> $js_path.'colorlib-ui.js',
+					'dependency' 	=> array(),
+					'version' 		=> '3.0.0',
+					'in_footer' 	=> true
 				),
 				array(
 					'handler'    => 'fashe-wp-fashe-main',
 					'file'       => $js_path . 'main.js',
-					'dependency' => array( 'jquery' ),
-					'version'    => $this->fashe_version,
+					'dependency' => array( 'fashe-ui-js' ),
+					'version'    => $this->fashe_version . '-s2',
 					'in_footer'  => true,
 				),
 			),
@@ -345,7 +319,7 @@ final class Fashe {
 		$had_elementor = get_option( 'fashe_had_elementor' );
 
 		if ( $had_elementor == 'no' && self::check_elementor_preview_page() ) {
-			wp_enqueue_script( 'fashe-elementor-notice', FASHE_DIR_JS_URI . 'fashe-elementor-notice.js', array( 'jquery' ), '1.0', true );
+			wp_enqueue_script( 'fashe-elementor-notice', FASHE_DIR_JS_URI . 'fashe-elementor-notice.js', array(), '1.0-s2', true );
 			wp_localize_script(
 				'fashe-elementor-notice',
 				'fasheElementorNotice',

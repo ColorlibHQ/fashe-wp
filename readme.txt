@@ -88,8 +88,6 @@ Images:
     Copyright (c) 2015-present
     Licensed under MIT ( https://github.com/ionic-team/ionicons/blob/master/LICENSE )
 
-* Animsition v4.0.2 (http://blivesta.github.io/animsition)
-    Licensed under MIT ( https://github.com/blivesta/animsition/blob/master/LICENSE.md )
 
  * Font Awesome
     License: SIL OFL 1.1
@@ -105,6 +103,5 @@ Images:
     URL: https://github.com/FezVrasta/popper.js/blob/master/LICENSE.md
 
 
-* Select2 v4.0.3 (https://github.com/select2/select2/blob/master/LICENSE.md)
     Copyright (c) 2012-2017
     License: MIT

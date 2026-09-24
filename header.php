@@ -11,7 +11,7 @@
 
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class( 'animsition' ); ?>>
+<body <?php body_class(); ?>>
 
 	<?php
 	/**

@@ -36,6 +36,8 @@ function fashe_common_custom_css() {
 		[data-loader='ball-scale'],
 		.select2-container .select2-results__option[aria-selected='true'],
 		.select2-container .select2-results__option--highlighted[aria-selected],
+		.nice-select .option.selected,
+		.nice-select .option:hover,
 		.item-menu-mobile,
 		.arrow-slick1:hover,
 		.swal-button,
