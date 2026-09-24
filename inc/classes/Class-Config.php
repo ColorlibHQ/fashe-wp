@@ -191,13 +191,13 @@ final class Fashe {
 					'handler'    => 'fashe-wp-util',
 					'file'       => $css_path . 'util.css',
 					'dependency' => array(),
-					'version'    => '1.0',
+					'version'    => '1.0-s3',
 				),
 				array(
 					'handler'    => 'fashe-wp-fashe',
 					'file'       => $css_path . 'main.css',
 					'dependency' => array(),
-					'version'    => $this->fashe_version . '-s2',
+					'version'    => $this->fashe_version . '-s3',
 				),
 				array(
 					'handler' => 'fashe-wp-fashe-style',
