@@ -197,7 +197,7 @@ final class Fashe {
 					'handler'    => 'fashe-wp-fashe',
 					'file'       => $css_path . 'main.css',
 					'dependency' => array(),
-					'version'    => $this->fashe_version . '-s3',
+					'version'    => $this->fashe_version . '-s4',
 				),
 				array(
 					'handler' => 'fashe-wp-fashe-style',

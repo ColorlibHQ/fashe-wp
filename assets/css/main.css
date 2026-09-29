@@ -2835,104 +2835,138 @@ header.woocommerce-Address-title.title h3 {
 .bottombar-social a[href*="twitter.com"].fa:before,
 .topbar-social a[href*="twitter.com"].fa:before,
 .fa-twitter:before {
-	content: "\f099"
+	content: "\f099";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="facebook.com"].fa:before,
 .topbar-social a[href*="facebook.com"].fa:before,
 .fa-facebook-f:before,
 .fa-facebook:before {
-	content: "\f09a"
+	content: "\f09a";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="github.com"].fa:before,
 .topbar-social a[href*="github.com"].fa:before,
 .fa-github:before {
-	content: "\f09b"
+	content: "\f09b";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="/feed"].fa:before,
 .topbar-social a[href*="/feed"].fa:before,
 .fa-rss:before {
-	content: "\f09e"
+	content: "\f09e";
+	font-family: "Font Awesome 7 Free";
+	font-weight: 900;
 }
 
 .bottombar-social a[href*="pinterest.com"].fa:before,
 .topbar-social a[href*="pinterest.com"].fa:before,
 .fa-pinterest:before {
-	content: "\f0d2"
+	content: "\f0d2";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="plus.google.com"].fa:before,
 .topbar-social a[href*="plus.google.com"].fa:before,
 .fa-google-plus:before {
-	content: "\f0d5"
+	content: "\f0d5";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="linkedin.com"].fa:before,
 .topbar-social a[href*="linkedin.com"].fa:before,
 .fa-linkedin:before {
-	content: "\f0e1"
+	content: "\f0e1";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="youtube.com"].fa:before,
 .topbar-social a[href*="youtube.com"].fa:before,
 .fa-youtube:before {
-	content: "\f167"
+	content: "\f167";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="instagram.com"].fa:before,
 .topbar-social a[href*="instagram.com"].fa:before,
 .fa-instagram:before {
-	content: "\f16d"
+	content: "\f16d";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="flickr.com"].fa:before,
 .topbar-social a[href*="flickr.com"].fa:before,
 .fa-flickr:before {
-	content: "\f16e"
+	content: "\f16e";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="tumblr.com"].fa:before,
 .topbar-social a[href*="tumblr.com"].fa:before,
 .fa-tumblr:before {
-	content: "\f173"
+	content: "\f173";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="dribbble.com"].fa:before,
 .topbar-social a[href*="dribbble.com"].fa:before,
 .fa-dribbble:before {
-	content: "\f17d"
+	content: "\f17d";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="skype.com"].fa:before,
 .topbar-social a[href*="skype.com"].fa:before,
 .fa-skype:before {
-	content: "\f17e"
+	content: "\f17e";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="foursquare.com"].fa:before,
 .topbar-social a[href*="foursquare.com"].fa:before,
 .fa-foursquare:before {
-	content: "\f180"
+	content: "\f180";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="vimeo.com"].fa:before,
 .topbar-social a[href*="vimeo.com"].fa:before,
 .fa-vimeo-square:before {
-	content: "\f194"
+	content: "\f194";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="spotify.com"].fa:before,
 .topbar-social a[href*="spotify.com"].fa:before,
 .fa-spotify:before {
-	content: "\f1bc"
+	content: "\f1bc";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 
 .bottombar-social a[href*="soundcloud.com"].fa:before,
 .topbar-social a[href*="soundcloud.com"].fa:before,
 .fa-soundcloud:before {
-	content: "\f1be"
+	content: "\f1be";
+	font-family: "Font Awesome 7 Brands";
+	font-weight: 400;
 }
 #wdi_instagram_widget-2 h2.widgettitle{
 	font-family: Montserrat-Bold;
